@@ -1,0 +1,292 @@
+/* AUTOMATICALLY GENERATED ON Sat Jan 19 13:45:42 NZDT 2019*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getApplicationStatusTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "setDbConnectionManager,Local,org.sola.services.common.repository.DatabaseConnectionManager";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "isInRole,Local,java.lang.String[]";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getRequestCategoryTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getCancelNotifications,Local,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getRoleVerifier,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getRequestTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getNotifyProperty,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getCancelNotification,Local,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getApplicationActionTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getTypeActions,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getUserName,Local,";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifyParty,Local,org.sola.services.ejb.application.repository.entities.Notify";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getNotifiableParty,Local,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getNotifyParty,Local,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getNotifiableParties,Local,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifyProperty,Local,org.sola.services.ejb.application.repository.entities.NotifyProperty";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getCodeEntityList,Local,java.lang.Class";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getServiceActionTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveEntity,Local,org.sola.services.common.repository.entities.AbstractEntity";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifyParties,Local,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getServiceStatusTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getCodeEntityList,Local,java.lang.Class,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "DashbrdViewAssign";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "Notify" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "Notify";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnAssignOthers";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionAssign,Local,java.lang.String,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "BaunitSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnView";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getApplicationByTransactionId,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getService,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getUserActions,Local,java.lang.String,java.util.Date,java.util.Date";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getApplication,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getNotifyParties,Local,java.lang.String,boolean";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "StartService";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "serviceActionStart,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "PartySave";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifiableParty,Local,org.sola.services.ejb.application.repository.entities.NotifiablePartyForBaUnit";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "BaunitCertificate";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveInformationService,Local,org.sola.services.ejb.application.repository.entities.Service,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnDispatch";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionDespatch,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnResubmit";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionResubmit,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "systematicRegn";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getSysRegCertificatesByLocation,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getSysRegCertificatesByApplication,Local,java.lang.String,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ManageSecurity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnUnassignSelf";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionUnassign,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "SourcePrint";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveInformationService,Local,org.sola.services.ejb.application.repository.entities.Service,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ChangePassword";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ModerateClaim";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnUnassignOthers";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionUnassign,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnCreate";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifiableParty,Local,org.sola.services.ejb.application.repository.entities.NotifiablePartyForBaUnit";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveApplication,Local,org.sola.services.ejb.application.repository.entities.Application,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "calculateFeesAndDates,Local,org.sola.services.ejb.application.repository.entities.Application";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "createApplication,Local,org.sola.services.ejb.application.repository.entities.Application,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnAssignSelf";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionAssign,Local,java.lang.String,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnWithdraw";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionWithdraw,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnApprove";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionApprove,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "SourceSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnStatus";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveInformationService,Local,org.sola.services.ejb.application.repository.entities.Service,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "RHSave";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifiableParty,Local,org.sola.services.ejb.application.repository.entities.NotifiablePartyForBaUnit";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "PrintMap";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveInformationService,Local,org.sola.services.ejb.application.repository.entities.Service,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "DashbrdViewUnassign";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "RevertService";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "serviceActionRevert,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnLapse" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnLapse";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionLapse,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnValidate";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionValidate,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ManageRefdata";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveCodeEntity,Local,org.sola.services.common.repository.entities.AbstractCodeEntity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnTransfer" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnTransfer";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionTransfer,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnArchive";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionArchive,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnEdit";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveNotifiableParty,Local,org.sola.services.ejb.application.repository.entities.NotifiablePartyForBaUnit";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "saveApplication,Local,org.sola.services.ejb.application.repository.entities.Application,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "calculateFeesAndDates,Local,org.sola.services.ejb.application.repository.entities.Application";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnRequisition";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionRequisition,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "CancelService";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "serviceActionCancel,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ApplnReject";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "applicationActionCancel,Local,java.lang.String,java.lang.String,int";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "ReportGenerate";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getWorkSummary,Local,java.util.Date,java.util.Date";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "getApplicationLog,Local,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ApplicationEJB", "CompleteService";
+  permission javax.security.jacc.EJBMethodPermission "ApplicationEJB", "serviceActionComplete,Local,java.lang.String,java.lang.String,int";
+};
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="filestreaming-service" targetNamespace="http%3A%2F%2Fwebservices.sola.org%2Ffilestreaming" xmlns:tns="http%3A%2F%2Fwebservices.sola.org%2Ffilestreaming" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1="http://www.w3.org/ns/ws-policy" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsaw="http://www.w3.org/2005/08/addressing" xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" 
+ >
+    <message name="CheckConnection"/>
+    <message name="CheckConnectionResponse"/>
+    <message name="Upload"/>
+    <message name="UploadResponse"/>
+    <message name="SOLAFault"/>
+    <message name="UnhandledFault"/>
+    <message name="Download"/>
+    <message name="DownloadResponse"/>
+    <portType name="FileStreaming">
+        <operation name="CheckConnection">
+            <input message="tns:CheckConnection"/>
+            <output message="tns:CheckConnectionResponse"/>
+        </operation>
+        <operation name="Upload">
+            <input message="tns:Upload"/>
+            <output message="tns:UploadResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+        </operation>
+        <operation name="Download">
+            <input message="tns:Download"/>
+            <output message="tns:DownloadResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+        </operation>
+    </portType>
+    <binding name="FileStreamingPortBinding" type="tns:FileStreaming">
+        <wsp1:PolicyReference URI="#FileStreamingPortBindingPolicy"/>
+        <operation name="CheckConnection">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="Upload">
+            <input/>
+            <output/>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+        </operation>
+        <operation name="Download">
+            <input/>
+            <output/>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+        </operation>
+    </binding>
+    <service name="filestreaming-service">
+        <port name="FileStreamingPort" binding="tns:FileStreamingPortBinding"/>
+    </service>
+    <wsp1:Policy wsu:Id="FileStreamingPortBindingPolicy">
+        <wsp1:ExactlyOne>
+            <wsp1:All>
+                <wsoma:OptimizedMimeSerialization/>
+            </wsp1:All>
+        </wsp1:ExactlyOne>
+    </wsp1:Policy>
+</definitions>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:uc="http://xmlns.jcp.org/jsf/composite/uc">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.CLAIM_SEARCH_PAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <script type="text/javascript">
+                    $(function() {
+                        bindDateFields('#{dateBean.datePattern.toLowerCase()}');
+                    });
+                </script>
+
+                <div class="PageName">
+                    <i class="glyphicon glyphicon-search"></i> #{msg.CLAIM_SEARCH_PAGE_TITLE}
+                </div>
+                <div class="content" style="min-width: 900px;">
+                    <uc:ClaimSearch id="ctrlClaimSearch" searchByUser="false" />
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

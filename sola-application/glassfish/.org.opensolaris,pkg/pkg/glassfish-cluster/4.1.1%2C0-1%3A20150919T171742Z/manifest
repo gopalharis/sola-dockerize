@@ -1,0 +1,18 @@
+set name=fmri value=pkg://release.glassfish.org/glassfish-cluster@4.1.1,0-1:20150919T171742Z
+set name=authority value=release.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="Clustering support for GlassFish. GlassFish Server is a modular and lightweight Java EE 7 compliant application server. Key features include an OSGi runtime, fast startup time, maven support, and rapid iterative development with Active Redeploy.  GlassFish Server also offers feature-rich administration with the web console, command line, and RESTful API."
+set name=pkg.summary value="GlassFish Clustering"
+depend fmri=pkg:/glassfish-common type=require
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/lib
+dir group=sys mode=0755 owner=root path=glassfish/modules
+dir group=sys mode=0755 owner=root path=glassfish/lib/asadmin
+file cc4306d8f495f9bd2be40c127bba950b76338dc2 chash=f3db299e4546c0f4dba4c66e34a50fc153f9e87f group=sys mode=0644 owner=root path=glassfish/lib/asadmin/cluster-cli.jar pkg.csize=183150 pkg.size=191558
+file 160ccd943a1b2498e925f367b8a13561d525db9f chash=6baba54f2e4c2a361c9707fc9d03292ec0b854ae group=sys mode=0644 owner=root path=glassfish/modules/gms-adapter.jar pkg.csize=41478 pkg.size=45175
+file 962d1ff688d8e7d73fc7a34fdd0adc16723314bc chash=40dcb3b86ada07931d0653ab8de751688c0f1732 group=sys mode=0644 owner=root path=glassfish/modules/cluster-common.jar pkg.csize=32778 pkg.size=38042
+file 25e822f07295109a0fa29ea840a1534cb82d803d chash=efff03ffaa53959b503c2bcde62decf0e17ea6e1 group=sys mode=0644 owner=root path=glassfish/modules/cluster-admin.jar pkg.csize=229922 pkg.size=246889
+file 0cde894f66c64313ab43dae1fa9fc330e106957b chash=dfc0f04e53b56b6176346d42ecbcd89652fe7c77 group=sys mode=0644 owner=root path=glassfish/modules/j-interop-repackaged.jar pkg.csize=821589 pkg.size=879476
+file 1219eb47def39cb09f21bcd10c1fe9d52e8a9f13 chash=0d303bb00702e5baf18b9c2d6e649f12570f23d8 group=sys mode=0644 owner=root path=glassfish/modules/cluster-ssh.jar pkg.csize=38327 pkg.size=42017
+file 9bfb518bb57df1ecc1137f8e92f072fe1c34dfc5 chash=5aeb5778a6dcf49f7e112b55a9095300d6a6e8af group=sys mode=0644 owner=root path=glassfish/modules/trilead-ssh2-repackaged.jar pkg.csize=234812 pkg.size=253655

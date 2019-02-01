@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.PASSWORD_RESTORE_PAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <div class="PageName">
+                    #{msg.PASSWORD_RESTORE_PAGE_TITLE}
+                </div>
+                <div class="content" style="width: 300px;">
+                    <h:panelGroup rendered="#{passwordRestorePageBean.showPasswordChange}">
+                        <p>#{msg.PASSWORD_RESTORE_PAGE_ENTER_NEW_PASSWORD}</p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtPassword">
+                                    #{msg.LOGINPAGE_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <div id="divPassword">
+                                    <h:inputSecret id="txtPassword" 
+                                                   maxlength="20"
+                                                   value="#{passwordRestorePageBean.userBean.password}" 
+                                                   class="form-control">
+                                    </h:inputSecret>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtPasswordConfirmation">
+                                    #{msg.REGISTRATIONPAGE_CONFIRM_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <div id="divPasswordConfirmation">
+                                    <h:inputSecret id="txtPasswordConfirmation" 
+                                                   maxlength="20"
+                                                   value="#{passwordRestorePageBean.userBean.passwordRepeat}" 
+                                                   class="form-control">
+                                    </h:inputSecret>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:commandButton value="#{msg.GENERAL_LABEL_CHANGE}" 
+                                                 action="#{passwordRestorePageBean.changePassword()}" 
+                                                 class="btn btn-default">
+                                    <f:param name="code" value="#{passwordRestorePageBean.restoreCode}"></f:param>
+                                </h:commandButton>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{passwordRestorePageBean.showPasswordChangeConfirmation}">
+                        <h:outputText escape="false" value="#{passwordRestorePageBean.formatChangeConfirmation(msg.PASSWORD_RESTORE_PAGE_PASSWORD_CHANGED)}" />
+                    </h:panelGroup>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

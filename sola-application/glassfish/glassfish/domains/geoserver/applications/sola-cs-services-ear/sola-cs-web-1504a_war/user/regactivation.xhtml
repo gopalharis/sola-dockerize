@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.REGACTIVATIONPAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <f:metadata>
+                    <f:event type="preRenderView" listener="#{regActivationPageBean.pageLoad}"/>
+                </f:metadata>
+                <div class="PageName">
+                    <i class="glyphicon glyphicon-ok"></i> #{msg.REGACTIVATIONPAGE_TITLE}
+                </div>
+                <div class="content" style="width: 300px;">
+                    <h:panelGroup rendered="#{not regActivationPageBean.activated}">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtUserName">
+                                    #{msg.LOGINPAGE_USERNAME} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <br />
+                                <h:inputText id="txtUserName" 
+                                             value="#{regActivationPageBean.userName}" 
+                                             class="form-control"
+                                             maxlength="20"
+                                             autocomplete="off"
+                                             required="true" validatorMessage="#{err.USER_REGISTRATION_USERNAME_LENGTH}" 
+                                             requiredMessage="#{err.LOGIN_USERNAME_REQUIRED}">
+                                    <f:validateLength minimum="3" maximum="20" />
+                                </h:inputText>
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtActivationCode">
+                                    #{msg.REGACTIVATIONPAGE_CODE} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <br />
+                                <h:inputText id="txtActivationCode" 
+                                             class="form-control"
+                                             maxlength="20"
+                                             autocomplete="off"
+                                             value="#{regActivationPageBean.activationCode}"
+                                             required="true" 
+                                             requiredMessage="#{err.USER_ACTIVATION_CODE_REQUIRED}" />
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtCaptcha">
+                                    #{msg.REGISTRATIONPAGE_CAPTCHA} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h:inputText id="txtCaptcha" 
+                                                     value="#{regActivationPageBean.captchaValue}" 
+                                                     class="form-control" 
+                                                     required="true" 
+                                                     autocomplete="off"
+                                                     transient="true"
+                                                     requiredMessage="#{err.USER_REGISTRATION_CAPTCHA_REQUIRED}" />
+                                    </div>
+                                    <div class="col-md-6" style="text-align: right;">
+                                        <img src="#{request.contextPath}/captcha.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:commandButton value="#{msg.REGACTIVATIONPAGE_ACTIVATE}" 
+                                                 action="#{regActivationPageBean.activate()}" 
+                                                 class="btn btn-default" />
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{regActivationPageBean.activated}">
+                        
+                        <h:outputFormat value="#{msg.REGACTIVATIONPAGE_SUCCESS_MESSAGE}" escape="false">
+                            <f:param value="#{request.contextPath}/login.xhtml" />
+                        </h:outputFormat>
+                    </h:panelGroup>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,51 @@
+set name=fmri value=pkg://release.glassfish.org/glassfish-common-full@4.1.1,0-1:20150919T172124Z
+set name=authority value=release.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="GlassFish Commons Full Profile description placeholder. GlassFish Server is a modular and lightweight Java EE 7 compliant application server. Key features include an OSGi runtime, fast startup time, maven support, and rapid iterative development with Active Redeploy.  GlassFish Server also offers feature-rich administration with the web console, command line, and RESTful API."
+set name=pkg.summary value="GlassFish Commons Full Profile"
+depend fmri=pkg:/glassfish-common type=require
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/modules
+dir group=sys mode=0755 owner=root path=glassfish/lib
+file 1f58336c936fb3122412a1eed92ec7d7da6293dc chash=482174539d0c0d8478ce532c6a395bb61e8c2768 group=sys mode=0644 owner=root path=glassfish/modules/glassfish-batch-connector.jar pkg.csize=13456 pkg.size=16528
+file 0b1676601c510d2cf2684fc6ab69a2b3b722a9f6 chash=335aed47518fa1f79538bd6ddbc4a341c7aaae3a group=sys mode=0644 owner=root path=glassfish/modules/console-common-full-plugin.jar pkg.csize=122355 pkg.size=133231
+file 0d4c2eb2c2285a466a2d27a2e13736ded26bb539 chash=41af307c1395c4ff281158f538a41bcaa72c9d6f group=sys mode=0644 owner=root path=glassfish/modules/console-concurrent-plugin.jar pkg.csize=83492 pkg.size=91378
+file 84db6c3023b74a3b12d094be01a0ce0083695a9c chash=f28c58323e2b76874daf92472fbd8f18791f83c4 group=sys mode=0644 owner=root path=glassfish/modules/glassfish-batch-commands.jar pkg.csize=41205 pkg.size=44311
+file 5da935c2c3730e329104b916466ddf082c9632b5 chash=99aae8b5375bfdf368f8f72b5753217c16d389d9 group=sys mode=0644 owner=root path=glassfish/modules/javax.xml.rpc-api.jar pkg.csize=36943 pkg.size=45442
+file 5cd8b853f7d84f7aee75d161c04b184957228d6e chash=d740765777f4d5dee068b7b7412dadd0189e197c group=sys mode=0644 owner=root path=glassfish/modules/concurrent-connector.jar pkg.csize=21886 pkg.size=27527
+file 844fdef49e73c4e617bc268d9258b2e6f7e1ac94 chash=367d42789dc919117ef047e09d4035ad3fb4c12d group=sys mode=0644 owner=root path=glassfish/modules/javax.enterprise.concurrent-api.jar pkg.csize=10971 pkg.size=14194
+file 6bba1ce66de796bd3ded3e78bbca1dff1c939bf3 chash=cb0da4fdec9802334fa7bdd6b11d559347fd598b group=sys mode=0644 owner=root path=glassfish/modules/com.ibm.jbatch.container.jar pkg.csize=340594 pkg.size=380299
+file 1d3dae32ff4f081b7b4cc979c3d6cc60071c30a8 chash=f7fb70a7cf4c9062b04282af56520136a8e26b10 group=sys mode=0644 owner=root path=glassfish/modules/javax.batch-api.jar pkg.csize=24957 pkg.size=34817
+file e763022871debeccba3a9028a1409266847f6a19 chash=d64c7bd8bfe6329fabe518dd19694e529edb722a group=sys mode=0644 owner=root path=glassfish/modules/javax.enterprise.concurrent.jar pkg.csize=47696 pkg.size=54939
+file 446b3a59dd755a5ba5b491f63e8e625b857a958b chash=c18b21e271d92c56801e4db0483136bcfb9f8a91 group=sys mode=0644 owner=root path=glassfish/modules/deployment-javaee-full.jar pkg.csize=42790 pkg.size=48045
+file dd9077e2229c061427fde1033bdad51e8b4f1cfb chash=c76d4339c59fdc77d5d097d1e58a320cfc2b1b4c group=sys mode=0644 owner=root path=glassfish/modules/com.ibm.jbatch.spi.jar pkg.csize=9820 pkg.size=12476
+file 368d4fa3aa09ff349d1264655773b9a7b7f956f8 chash=f42ddde8c470b6737022d63167115957d1ac4bf6 group=sys mode=0644 owner=root path=glassfish/modules/concurrent-impl.jar pkg.csize=96468 pkg.size=106593
+file 94e6ef81199b2b17f3ffc3bb1b8ff0902f4c565d chash=2cc67e8f86448016e9b9b6c1ad22f73d9ea6f744 group=sys mode=0644 owner=root path=glassfish/modules/ant.jar pkg.csize=1769664 pkg.size=1921741
+dir group=sys mode=0755 owner=root path=glassfish/lib/install
+dir group=sys mode=0755 owner=root path=glassfish/lib/deployment
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/databases
+file cd0d595a94326095917c1f8004aabab167b91d9f chash=57d50bffad48cfe131876f02052c528331d0cc18 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/mejb.jar pkg.csize=23194 pkg.size=25827
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/jaxr-ra
+file 481c7247a8e2c7af4af8bedce9d9beab109499ac chash=3d918a1aaba91256e579b1cdf116cf1b4ee9f3d1 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/jaxr-ra/jaxr-ra.jar pkg.csize=13043 pkg.size=14554
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/jaxr-ra/META-INF
+file d78a843ea13343ec70e16ceed230db0fef511550 chash=e46897eda3261b30203e455def28c707dbb95357 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/jaxr-ra/META-INF/MANIFEST.MF pkg.csize=107 pkg.size=102
+file 56e165ed7a765e7029d6609cc7e242345196cfc4 chash=dea9593687a5f1b8d335e4457ed534b544d7ede7 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/jaxr-ra/META-INF/ra.xml pkg.csize=485 pkg.size=1344
+file a7442c909bc5b831cb4be07a548556c840ce4c08 chash=6ea1ec880893a877707957f4160de98584beb2bf group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-derby.sql pkg.csize=588 pkg.size=1889
+file 3b297b8f0c541be3b43b6f1a208fe44c79e816ce chash=4f85d4549a68c1628895e12c9075aceff3023198 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-oracle.sql pkg.csize=685 pkg.size=2476
+file 636e9db5f9e55e4976c07b839c6b64c7be23b0ea chash=11855fe768d3b9d9cc34ab47a89331176e488378 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-sybase-ace.sql pkg.csize=544 pkg.size=1880
+file fc4dcbf01edabe5ea668467532eefe1f513819e3 chash=0d3d8058adaaef7f160d71cc2886216faeec8117 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-mssqlserver.sql pkg.csize=543 pkg.size=1823
+file 44d0d166d66a1751f6f36bde2d1bc8464f420c39 chash=13ae424d3dc5a144fe034fc4a88175621f29523c group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-postgresql.sql pkg.csize=484 pkg.size=1549
+file b1c3384c7eb31d8c238db8c12d9623918a3c27de chash=c7e49155550914d19422d525910f27c134b2ae27 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-mysql.sql pkg.csize=533 pkg.size=1743
+file 6eb7292924155f851d8dd0a9407d64ff62e43845 chash=fb7daa64960878e20dc6fc04725c90eda1a60ba2 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/jsr352-db2.sql pkg.csize=614 pkg.size=2071
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/databases/oracle
+file 0c7d2947c220cf708c4aa1098f1932425450ca73 chash=a3e788514f899d4946fdcedd6b3e45ffc2506904 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/execution_instance_data_ddl.sql pkg.csize=708 pkg.size=1880
+file 571e87b5281c81b59a1de2f78e36e6da3be6d410 chash=2e9c6bc2b62b7c21a66b6396c7a71257b2ecbaa8 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/job_instance_data_ddl.sql pkg.csize=592 pkg.size=1390
+file 200fb9404a3084aa7bdba7901fc813a30f9c9c18 chash=3d1e89ee640513f4a9265f35d5964aa7d1061a12 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/step_status_ddl.sql pkg.csize=451 pkg.size=728
+file 3288c929d4ff2a8b5a15275c081730281505284e chash=b6fa81e8ba40f5a64239bbafbc21ce29862e3b2f group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/job_status_ddl.sql pkg.csize=449 pkg.size=716
+file f35f45a25b3d5b2780c56f5515d87f409c6ad4fa chash=eb3c0516889d6a1edd39261a5b70d20b693fbd81 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/create-all-tables.sql pkg.csize=92 pkg.size=170
+file 518b1dd750492aabf6a5398c03dd13a331809f1b chash=f543e3c1073a4d55b2985cb552c6eee54647eb1b group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/drop-all-tables.sql pkg.csize=93 pkg.size=172
+file d829678b16754a7fd09f550e3c761fa3e328c9e0 chash=4b40928e3ee58876cc892bd9e6bd44c327402248 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/checkpoint_data_ddl.sql pkg.csize=371 pkg.size=600
+file b55aa727775d7920c56d234060e9fb344439d897 chash=516ad41da2c9f659d72bcb944f950ed9333a64e7 group=sys mode=0644 owner=root path=glassfish/lib/install/databases/oracle/step_execution_instance_data_ddl.sql pkg.csize=778 pkg.size=2323
+file 8a7dc148c16736e2a9d854454a3541dd7d2b9e34 chash=7a7a5f98d29fdde25b56a1ff4b0ca6b5f691008a group=sys mode=0644 owner=root path=glassfish/lib/deployment/sun-as-jsr88-dm.jar pkg.csize=2437 pkg.size=3183

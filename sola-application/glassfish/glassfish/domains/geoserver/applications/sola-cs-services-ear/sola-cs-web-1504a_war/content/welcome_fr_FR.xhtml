@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition>
+            <h1>Bienvenue sur le serveur de la Communauté SOLA</h1>
+            <p>
+                En utilisant le Serveur de la Communauté SOLA, vous pouvez <h:link outcome="user/registration">vous inscrire</h:link> en tant que Collecteur Communautaire et soumettre des déclarations de la part de membres de votre communauté.
+                Une fois que vous avez complété votre inscription, un code de confirmation sera envoyé sur votre adresse email.
+                Vous devrez l’activer en cliquant sur le lien envoyé. Toutes les inscriptions en tant que Collecteur Communautaire sont sujet à revue et approbation par les gérants du Serveur de la Communauté.
+                <p></p>
+                Si vous êtes déjà inscrits, utilisez <h:link outcome="login">la page de connexion</h:link> pour vous connecter au système.
+            </p>
+            <p>
+                En tant qu’utilisateur non inscrit, vous pouvez accéder aux informations des <h:link outcome="claim/search">déclarations</h:link> et visualiser <h:link outcome="map/map">le plan</h:link>.
+                Si vous souhaitez soumettre une contestation face à une déclaration, vous devrez contacter un de vos Collecteur Communautaire ou vous enregistrer comme Collecteur vous-même. Dans ce cas, utilisez <h:link outcome="user/registration">cette page</h:link> pour procéder à votre inscription.
+            </p>
+        </ui:composition>
+    </body>
+</html>
+
+

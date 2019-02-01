@@ -1,0 +1,500 @@
+/* AUTOMATICALLY GENERATED ON Fri Sep 18 16:42:09 NZST 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.WebResourcePermission "/javax.faces.resource/*";
+  permission javax.security.jacc.WebResourcePermission "/error.xhtml";
+  permission javax.security.jacc.WebResourcePermission "/:/login.xhtml:/error.xhtml:/javax.faces.resource/*:*.xhtml";
+  permission javax.security.jacc.WebResourcePermission "/login.xhtml";
+  permission javax.security.jacc.WebUserDataPermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*", ":CONFIDENTIAL";
+  permission javax.security.jacc.WebUserDataPermission "/login.xhtml", ":CONFIDENTIAL";
+  permission javax.security.jacc.WebUserDataPermission "/:/login.xhtml:/error.xhtml:/javax.faces.resource/*:*.xhtml";
+  permission javax.security.jacc.WebUserDataPermission "/javax.faces.resource/*", ":CONFIDENTIAL";
+  permission javax.security.jacc.WebUserDataPermission "/error.xhtml", ":CONFIDENTIAL";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "default", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "DashbrdViewAssign";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "default", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnAssignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "default", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "BaunitSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnView";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "", "StartService";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "BaunitCertificate";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "PartySave";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "default", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnDispatch";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageBR" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageBR";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageBR";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ManageBR";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageBR";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ManageBR";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewReports" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "ViewReports";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ViewReports";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ViewReports";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ViewReports";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ViewReports";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "default", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnResubmit";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "default", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "systematicRegn";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ManageSecurity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnUnassignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "default", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "", "SourcePrint";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ChangePassword";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ModerateClaim";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "**";
+  permission javax.security.jacc.WebRoleRefPermission "", "**";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "**";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "**";
+  permission javax.security.jacc.WebRoleRefPermission "default", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnUnassignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnCreate";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "default", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnAssignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnWithdraw";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnApprove";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "default", "SourceSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnStatus";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "default", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "RHSave";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "default", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "", "PrintMap";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "default", "DashbrdViewUnassign";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "RevertService";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "default", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "default", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnValidate";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ManageRefdata";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnArchive";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnEdit";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnRequisition";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "CancelService";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ApplnReject";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "", "ReportGenerate";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.WebResourcePermission "*.xhtml:/login.xhtml:/error.xhtml:/javax.faces.resource/*";
+  permission javax.security.jacc.WebRoleRefPermission "GetBackupFile", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "Faces Servlet", "CompleteService";
+};
+

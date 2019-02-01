@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : connectionConfig.xml
+    Created on : October 2011
+    Description: Contains DB configuration details for myBatis. 
+-->
+
+<!DOCTYPE configuration PUBLIC '-//mybatis.org//DTD Config 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+    
+    <typeHandlers>
+        <!-- Custom type handler for dealing with the Character data type to overcome a mybatis defect.-->
+        <typeHandler javaType='java.lang.Character' handler='org.sola.services.common.repository.CharTypeHandler'/>
+    </typeHandlers>
+    
+    <environments default='sharedDataSource'>
+        <environment id='sharedDataSource'>
+            <transactionManager type='MANAGED'/>
+            <dataSource type='JNDI'>
+                <property name='data_source' value='jdbc/sola'/>
+            </dataSource>
+        </environment>
+        <environment id='specificDataSource'>
+            <transactionManager type='MANAGED'/>
+            <dataSource type='JNDI'>
+                <property name='data_source' value='jdbc/refdata'/>
+            </dataSource>
+        </environment>  
+    </environments>
+
+</configuration>

@@ -1,0 +1,13 @@
+/* AUTOMATICALLY GENERATED ON Fri Sep 18 16:42:01 NZST 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "SharedFolderCleaner", "init,Local,";
+  permission javax.security.jacc.EJBMethodPermission "Mailer", "init,Local,";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "Mailer", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "SharedFolderCleaner", "**";
+};
+

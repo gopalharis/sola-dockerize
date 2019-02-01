@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.PROFILEPAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <div class="PageName"><i class="glyphicon glyphicon-user"></i> #{msg.PROFILEPAGE_TITLE}</div>
+                <div class="content" style="width: 600px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtFirstName">
+                                #{msg.REGISTRATIONPAGE_FIRST_NAME} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divFirstName">
+                                <h:inputText id="txtFirstName" 
+                                             value="#{profilePageBean.userBean.firstName}" 
+                                             maxlength="50"
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{profilePageBean.validateFirstName}" 
+                                            render="msgFirstNameConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgFirstNameConfirmation" value="#{profilePageBean.firstNameValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtLastName">
+                                #{msg.REGISTRATIONPAGE_LAST_NAME} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divLastName">
+                                <h:inputText id="txtLastName" 
+                                             maxlength="50"
+                                             value="#{profilePageBean.userBean.lastName}" 
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{profilePageBean.validateLastName}" 
+                                            render="msgLastNameConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgLastNameConfirmation" value="#{profilePageBean.lastNameValidation}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtEmail">
+                                #{msg.REGISTRATIONPAGE_EMAIL} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divEmail">
+                                <h:inputText id="txtEmail" 
+                                             maxlength="50"
+                                             value="#{profilePageBean.userBean.email}" 
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{profilePageBean.validateEmail}" 
+                                            render="msgEmailConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgEmailConfirmation" value="#{profilePageBean.emailValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtMobileNumber">
+                                #{msg.REGISTRATIONPAGE_MOBILE} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divMobileNumber">
+                                <h:inputText id="txtMobileNumber" 
+                                             maxlength="50"
+                                             value="#{profilePageBean.userBean.mobileNumber}" 
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{profilePageBean.validateMobile}" 
+                                            render="msgMobileConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgMobileConfirmation" value="#{profilePageBean.mobileValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtCommunityName">
+                                #{msg.REGISTRATIONPAGE_COMMUNITY_NAME}
+                            </h:outputLabel>
+                            <br />
+                            <h:inputText id="txtCommunityName" 
+                                         maxlength="20"
+                                         value="#{profilePageBean.userBean.description}" 
+                                         class="form-control" 
+                                         autocomplete="off" />
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+
+                    <div class="LineSpace"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:commandButton value="#{msg.GENERAL_LABEL_SAVE}" 
+                                             action="#{profilePageBean.saveProfile}" 
+                                             class="btn btn-default">
+                                <f:ajax execute="@form" render="@form :headerForm" />
+                            </h:commandButton>
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+
+                    <div class="LineSpace"></div>
+
+                    <div class="SectionHeader">#{msg.PROFILEPAGE_PASSWORD_CHANGE}</div>
+
+                    <div class="LineSpace"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtOldPassword">
+                                #{msg.PROFILEPAGE_CURRENT_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divOldPassword">
+                                <h:inputSecret id="txtOldPassword" 
+                                               maxlength="20"
+                                               value="#{profilePageBean.userBean.oldPassword}" 
+                                               class="form-control">
+                                    <f:ajax event="change" 
+                                            listener="#{profilePageBean.validateOldPassword}" 
+                                            render="msgOldPassword" />
+                                </h:inputSecret>
+                                <h:outputText escape="false" id="msgOldPassword" value="#{profilePageBean.oldPasswordValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+
+                    <div class="LineSpace"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtPassword">
+                                #{msg.PROFILEPAGE_NEW_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divPassword">
+                                <h:inputSecret id="txtPassword" 
+                                               maxlength="20"
+                                               value="#{profilePageBean.userBean.password}" 
+                                               class="form-control">
+                                    <f:ajax event="change" execute="txtPassword txtPasswordConfirmation" 
+                                            listener="#{profilePageBean.validatePassword}" 
+                                            render="msgPassword msgPasswordConfirmation" />
+                                </h:inputSecret>
+                                <h:outputText escape="false" id="msgPassword" value="#{profilePageBean.passwordValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtPasswordConfirmation">
+                                #{msg.REGISTRATIONPAGE_CONFIRM_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divPasswordConfirmation">
+                                <h:inputSecret id="txtPasswordConfirmation" 
+                                               maxlength="20"
+                                               value="#{profilePageBean.userBean.passwordRepeat}" 
+                                               class="form-control">
+                                    <f:ajax event="change" execute="txtPassword txtPasswordConfirmation" 
+                                            listener="#{profilePageBean.validatePasswordConfirmation}" 
+                                            render="msgPasswordConfirmation" />
+                                </h:inputSecret>
+                                <h:outputText escape="false" id="msgPasswordConfirmation" value="#{profilePageBean.passwordConfirmationValidation}" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="LineSpace"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:commandButton id="btnChange"
+                                             value="#{msg.GENERAL_LABEL_CHANGE}" 
+                                             action="#{profilePageBean.changePassword()}" 
+                                             class="btn btn-default">
+                                <f:ajax execute="@form" render="@form :headerForm" />
+                            </h:commandButton>
+                        </div>
+                    </div>
+
+                    <div class="LineSpace"></div>
+
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

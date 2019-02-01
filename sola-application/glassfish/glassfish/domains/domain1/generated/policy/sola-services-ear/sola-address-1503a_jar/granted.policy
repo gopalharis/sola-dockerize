@@ -1,0 +1,230 @@
+/* AUTOMATICALLY GENERATED ON Sat Jan 19 13:45:42 NZDT 2019*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getAddresses,Local,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "saveAddress,Local,org.sola.services.ejb.address.repository.entities.Address";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "saveEntity,Local,org.sola.services.common.repository.entities.AbstractEntity";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "isInRole,Local,java.lang.String[]";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getAddress,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getCodeEntityList,Local,java.lang.Class";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getUserName,Local,";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "getCodeEntityList,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "setDbConnectionManager,Local,org.sola.services.common.repository.DatabaseConnectionManager";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "DashbrdViewAssign";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "Notify" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "Notify";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnAssignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "BaunitSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnView";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "StartService";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "BaunitCertificate";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "PartySave";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnDispatch";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnResubmit";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "systematicRegn";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ManageSecurity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnUnassignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "SourcePrint";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ChangePassword";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ModerateClaim";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnUnassignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnCreate";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnAssignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnWithdraw";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnApprove";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "SourceSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnStatus";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "RHSave";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "PrintMap";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "DashbrdViewUnassign";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "RevertService";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnValidate";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ManageRefdata";
+  permission javax.security.jacc.EJBMethodPermission "AddressEJB", "saveCodeEntity,Local,org.sola.services.common.repository.entities.AbstractCodeEntity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnArchive";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnEdit";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnRequisition";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "CancelService";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ApplnReject";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "ReportGenerate";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.EJBRoleRefPermission "AddressEJB", "CompleteService";
+};
+

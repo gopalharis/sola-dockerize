@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition>
+            <h:form id="attachForm" enctype="multipart/form-data" acceptcharset="UTF-8">
+                <div style="display: none;" class="modal fade" id="attachmentDialog" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">#{msg.GENERAL_LABEL_CLOSE}</span></button>
+                                <h4 class="modal-title" id="myModalLabel">#{msg.CLAIM_PAGE_DOCUMENT}</h4>
+                            </div>
+                            <div class="modal-body" id="attachmentBody">
+                                <div id="pnlAttachmentWrapper" class="HiddenItem">
+                                    <h:panelGroup id="pnlAttachment" layout="block">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <h:outputLabel for="cbxDocType">
+                                                        #{msg.CLAIM_PAGE_DOCUMENT_TYPE} <i class="glyphicon glyphicon-required"></i>
+                                                    </h:outputLabel>
+                                                    <h:selectOneListbox
+                                                        id="cbxDocType" 
+                                                        size="1"
+                                                        value="#{claimAttachmentBean.attach.typeCode}"
+                                                        class="form-control">
+                                                        <f:selectItems value="#{claimAttachmentBean.documentTypes}" var="t"
+                                                                       itemLabel="#{t.displayValue}" 
+                                                                       itemValue="#{t.code}" />
+                                                    </h:selectOneListbox>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h:panelGroup layout="block" rendered="#{claimAttachmentBean.isNew}">
+                                                    <div class="form-group">
+                                                        <h:outputLabel for="fDocFile">
+                                                            #{msg.CLAIM_PAGE_FILE} <i class="glyphicon glyphicon-required"></i>
+                                                        </h:outputLabel>
+                                                        <h:inputFile id="fDocFile" value="#{claimAttachmentBean.docFile}" />
+                                                    </div>
+                                                </h:panelGroup>
+                                                <h:panelGroup layout="block" rendered="#{not claimAttachmentBean.isNew}">
+                                                    <label>
+                                                        #{msg.CLAIM_PAGE_FILE}
+                                                    </label>
+                                                    <br />
+                                                    <i>#{claimAttachmentBean.attach.fileName}</i>
+                                                </h:panelGroup>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <h:outputLabel for="txtDocRefNumber">
+                                                        #{msg.CLAIM_PAGE_DOCUMENT_REF_NUMBER}
+                                                    </h:outputLabel>
+                                                    <h:inputText id="txtDocRefNumber" 
+                                                                 value="#{claimAttachmentBean.attach.referenceNr}" 
+                                                                 class="form-control"
+                                                                 maxlength="20"
+                                                                 autocomplete="off" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <h:outputLabel for="txtDocDate">
+                                                        #{msg.CLAIM_PAGE_DOCUMENT_DATE}
+                                                    </h:outputLabel>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="glyphicon glyphicon-calendar"></i>
+                                                        </span>
+                                                        <h:inputText id="txtDocDate" 
+                                                                     value="#{claimAttachmentBean.docDate}"  
+                                                                     class="form-control DateField"
+                                                                     maxlength="10"
+                                                                     autocomplete="off" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <h:outputLabel for="txtDocDescription">
+                                                #{msg.CLAIM_PAGE_DOCUMENT_DESCRIPTION}
+                                            </h:outputLabel>
+                                            <h:inputText id="txtDocDescription" 
+                                                         value="#{claimAttachmentBean.attach.description}" 
+                                                         class="form-control"
+                                                         maxlength="250"
+                                                         autocomplete="off" />
+                                        </div>
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">#{msg.GENERAL_LABEL_CLOSE}</button>
+                                <h:commandButton class="btn btn-primary" value="#{msg.GENERAL_LABEL_SAVE}" onclick="return checkAttachmentForm()">
+                                    <f:ajax event="click" execute=":attachForm:pnlAttachment" 
+                                            render=":mainForm:pnlAttachments"
+                                            onevent="onSaveAttachment"
+                                            onerror="handleAjaxError"
+                                            listener="#{claimAttachmentBean.saveAttachment(instantSave)}" />
+                                </h:commandButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <script language="javascript">
+                    function checkAttachmentForm() {
+                        var selectTypeError = '- #{err.ATTACHMENT_SELECT_DOOCUMENT_TYPE}';
+                        var selectFileError = '- #{err.ATTACHMENT_SELECT_FILE}';
+                        var errors = "";
+
+                        if ($("#attachForm\\:cbxDocType").val() === '') {
+                            errors = selectTypeError + "\r\n";
+                        }
+
+                        if (document.getElementById("attachForm:fDocFile") !== null) {
+                            if ($("#attachForm\\:fDocFile").val() === '') {
+                                errors += selectFileError;
+                            }
+                        }
+
+                        if (errors !== '') {
+                            alert(errors);
+                            return false;
+                        }
+
+                    }
+
+                    function onOpenEditAttachment(data) {
+                        var status = data.status;
+                        switch (status) {
+                            case "begin":
+                                $('#pnlAttachmentWrapper').hide();
+                                $('#attachmentDialog').modal('show');
+                                $('#waitMessage').detach().appendTo('#attachmentBody');
+                                $('#waitMessage').show();
+                                break;
+                            case "success":
+                                $('#waitMessage').hide();
+                                $('#pnlAttachmentWrapper').show();
+                                bindDateFields('#{dateBean.datePattern.toLowerCase()}');
+                                break;
+                        }
+                    }
+
+                    function onOpenEditAttachmentError(data) {
+                        if (data.type !== "event") {
+                            $('#waitMessage').hide();
+                            alert(data.name);
+                        }
+                    }
+
+                    function animateComponent(comp) {
+                        $('#mainForm\\:' + comp).hide();
+                        $('#mainForm\\:' + comp).fadeIn('slow');
+                    }
+
+                    function onSaveAttachment(data) {
+                        handleAjax(data);
+                        var status = data.status;
+                        switch (status) {
+                            case "success":
+                                $('#attachmentDialog').modal('hide');
+                                animateComponent('tableAttachments');
+                                break;
+                        }
+                    }
+
+                    function onDeleteAttachment(data) {
+                        handleAjax(data);
+                        var status = data.status;
+                        switch (status) {
+                            case "success":
+                                animateComponent('tableAttachments');
+                                break;
+                        }
+                    }
+                </script>
+            </h:form>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,909 @@
+/* AUTOMATICALLY GENERATED ON Sat Jan 26 22:48:02 IST 2019*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.WebResourcePermission "/";
+  permission javax.security.jacc.WebUserDataPermission "/";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "default", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "DashbrdViewAssign";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "DashbrdViewAssign";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "default", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "02SEC_Restricted";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "Notify" {
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "default", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "", "Notify";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "Notify";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ChangeSecClass";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageSettings";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnAssignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnAssignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "default", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "BaunitSearch";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "BaunitSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnView";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnView";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "StartService";
+  permission javax.security.jacc.WebRoleRefPermission "", "StartService";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ViewMap";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "BaunitCertificate";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "BaunitCertificate";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "PartySave";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "PartySave";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "default", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "AccessCS";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnDispatch";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnDispatch";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "default", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "RecordClaim";
+  permission javax.security.jacc.WebRoleRefPermission "", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "default", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "10SEC_SuppressOrd";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnResubmit";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnResubmit";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "default", "systematicRegn";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "systematicRegn";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageSecurity";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ManageSecurity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnUnassignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnUnassignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "default", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "SourcePrint";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "SourcePrint";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ChangePassword";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ChangePassword";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ModerateClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ModerateClaim";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.WebRoleRefPermission "", "**";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "**";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "**";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "**";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "**";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "**";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "**";
+  permission javax.security.jacc.WebRoleRefPermission "default", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "**";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "**";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "**";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "**";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "**";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnUnassignOthers";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnUnassignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnCreate";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnCreate";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "default", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "01SEC_Unrestricted";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnAssignSelf";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnAssignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "SourceSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "", "ReviewClaim";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnWithdraw";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnWithdraw";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnApprove";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnApprove";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "default", "SourceSearch";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "SourceSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnStatus";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnStatus";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "default", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "03SEC_Confidential";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.WebRoleRefPermission "", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "RHSave";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "RHSave";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "default", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "PrintMap";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "PrintMap";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.WebRoleRefPermission "default", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "TransactionCommit";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.WebRoleRefPermission "Search", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "default", "DashbrdViewUnassign";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "DashbrdViewUnassign";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "RevertService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "RevertService";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "default", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "04SEC_Secret";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ParcelSave";
+  permission javax.security.jacc.WebRoleRefPermission "", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "default", "BaunitSave";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "default", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "05SEC_TopSecret";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnValidate";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnValidate";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ManageRefdata";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ManageRefdata";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnArchive";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnArchive";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnEdit";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnEdit";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnRequisition";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnRequisition";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "CancelService";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "CancelService";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ApplnReject";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ApplnReject";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "default", "ReportGenerate";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "ReportGenerate";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.WebRoleRefPermission "FileStreaming", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "BulkOperations", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "CaseManagement", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "Admin", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "FacesServlet", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "Cadastre", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "Administrative", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "ReferenceData", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "Spatial", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "default", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "Search", "CompleteService";
+  permission javax.security.jacc.WebRoleRefPermission "DigitalArchive", "CompleteService";
+};
+

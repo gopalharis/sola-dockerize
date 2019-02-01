@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition>
+            <h:commandLink class="BlueLink" rendered="#{(allowEdit and claimPageBean.canEdit) or claimPageBean.canAddDocuments}">
+                <f:ajax event="click" 
+                        render= ":attachForm:pnlAttachment"
+                        onevent="onOpenEditAttachment"
+                        onerror="onOpenEditAttachmentError"
+                        listener="#{claimAttachmentBean.loadAttachment(null)}" />
+                <i class="glyphicon glyphicon-plus"></i> #{msg.CLAIM_PAGE_ADD_DOCUMENT}
+            </h:commandLink>
+
+            <h:panelGroup id="pnlAttachments">
+                <h:dataTable value="#{claimPageBean.attachments}" var="a"
+                             id="tableAttachments"
+                             class="table"
+                             headerClass="table-header">
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_TYPE}</f:facet>
+                        <h:commandLink class="BlueLink" rendered="#{allowEdit and claimPageBean.canEdit}" style="margin-right: 5px;">
+                            <f:ajax event="click" 
+                                    render= ":attachForm:pnlAttachment"
+                                    onevent="onOpenEditAttachment"
+                                    onerror="onOpenEditAttachmentError"
+                                    listener="#{claimAttachmentBean.loadAttachment(a.id)}" />
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </h:commandLink>
+                        <h:commandLink rendered="#{allowEdit and claimPageBean.canEdit}"
+                                       style="margin-right: 7px;"
+                                       title="#{msg.GENERAL_LABEL_DELETE}"
+                                       onclick="return confirm('#{msg.CLAIM_PAGE_CONFIRM_DELETE_ATTACHMENT}')">
+                            <f:ajax listener="#{claimPageBean.deleteAttachment(a.id)}" 
+                                    event="click" onevent="onDeleteAttachment" onerror="handleAjaxError"
+                                    render=":mainForm:pnlAttachments" /><i class="glyphicon glyphicon-remove"></i>
+                        </h:commandLink>
+                        <a href="#{request.contextPath}/claim/getAttachment?id=#{a.id}">
+                            #{claimPageBean.getDocTypeName(a.typeCode)}
+                        </a>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_REF_NUMBER}</f:facet>
+                            #{a.referenceNr}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_DATE}</f:facet>
+                            #{dateBean.getShortDate(a.documentDate)}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_DESCRIPTION}</f:facet>
+                            #{a.description}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_SIZE}</f:facet>
+                            #{claimPageBean.getFileSize(a.size)}
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+        </ui:composition>
+    </body>
+</html>

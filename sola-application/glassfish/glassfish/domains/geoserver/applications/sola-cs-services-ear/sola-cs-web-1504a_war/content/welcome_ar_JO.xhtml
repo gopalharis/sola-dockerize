@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition>
+            <h1>مرحبا بك في خادم المجتمع سولا</h1>
+            <p>
+                باستخدام خادم المجتمع تستطيع <h:link outcome="user/registration">register</h:link> كمسجل للمجتمع تسجيل الأدعاءات وإرسالها بالنيابة عن أعضاء المجتمع. 
+             عند أنتهاء تسجيلك على النظام سوف يتم إرسال كود التأكيد على بريد الخاص.  
+                سوف تحتاج الى تفعيله, وذلك باتباع الخطوات المرسلة.  عملية تسجيل جميع المسجلين  قد تخضع الى عملية مراجعة من قبل مديري النظام.
+                <p></p>
+                أذا قمت بالتسجيل مسبقا , إستخدم <h:link outcome="login">صفحة تسجيل الدخول</h:link> لتسجيل الدخول على النظام.
+            </p>
+            <p>
+                مستخدم غير مسجل, تستطيع الوصول الى المعلومات عن <h:link outcome="claim/search">الأدعاءات</h:link> ومشاهدة <h:link outcome="map/map">الخارطة</h:link>. 
+                إذا كنت ترغب بأرسال تحديات للأدعاء , عليك الأتصال بمسجل المجتمع او تسجيل نفسك كمسجل. إستخدم<h:link outcome="user/registration">صفحة التسجيل</h:link> للمتابعة في عملية التسجيل
+            </p>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>sola-ejbs</artifactId>
+        <groupId>org.sola.services</groupId>
+        <version>1503a</version>
+    </parent>
+    <groupId>org.sola.services.ejbs</groupId>
+    <artifactId>sola-party</artifactId>
+    <packaging>ejb</packaging>
+    <version>1503a</version>
+    <name>EJB Party</name>
+    <dependencies>   
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-address</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-source</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+       
+</project>

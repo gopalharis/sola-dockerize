@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>sola-cs-boundary</artifactId>
+        <groupId>org.sola.cs.services</groupId>
+        <version>1504a</version>
+    </parent>
+
+    <groupId>org.sola.cs.services.boundary</groupId>
+    <artifactId>sola-cs-web</artifactId>
+    <version>1504a</version>
+    <packaging>war</packaging>
+
+    <name>Boundary CS Web</name>
+
+    <properties>
+        <sola.services.group.id>org.sola.cs.services</sola.services.group.id>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+        
+    <dependencies>
+        <dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>1.9.13</version>
+                <scope>provided</scope>
+	</dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.1.0.Final</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-multipart</artifactId>
+            <version>2.7</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-xc</artifactId>
+            <version>1.9.13</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+            <version>2.2.7</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>1.3.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${sola.services.group.id}</groupId>
+            <artifactId>sola-cs-services-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${sola.services.group.id}.boundary</groupId>
+            <artifactId>sola-cs-transfer-objects</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.cs.services.ejbs</groupId>
+            <artifactId>sola-cs-claim</artifactId>
+            <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${sola.services.group.id}.ejbs</groupId>
+            <artifactId>sola-cs-admin</artifactId>
+            <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${sola.services.group.id}.ejbs</groupId>
+            <artifactId>sola-cs-refdata</artifactId>
+            <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <compilerArguments>
+                        <endorseddirs>${endorsed.dir}</endorseddirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!--webResources>
+                        <resource>
+                            <directory>${basedir}/src/main/java/META-INF</directory>
+                            <targetPath>WEB-INF/classes/META-INF</targetPath>
+                        </resource>
+                    </webResources-->
+                    <!--
+                    To correctly generate the WSDL artifacts for the services using the
+                    jaxws-maven-plugin (wsgen) above it is necessary to have all dependencies of 
+                    the WAR set as compile dependencies. This causes a deployment problem when 
+                    the WAR is packaged as part of the SOLA Services EAR as some EJB's are 
+                    referenced multiple times. To avoid this deployment issue and allow wsgen 
+                    to work correctly, the following configuration settings ensure the WAR is only
+                    packaged with those dependencies and config files that cannot be obtained from
+                    the EAR lib directory. Note that all jars referenced by the EJB projects are
+                    placed in the EAR lib directory and will be available to the WAR on its 
+                    manifest classpath. For more details on the configuration below, refer to 
+                    "Creating Skinny WARs" on the internet.  
+                    
+                    Note that if additional files are added to the WAR, it may be necessary to 
+                    update the list of files/jar's included in the packaging of the WAR. -->    
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>    
+                        </manifest>    
+                    </archive>
+                    <packagingExcludes>WEB-INF/lib/**</packagingExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${endorsed.dir}</outputDirectory>
+                            <silent>true</silent>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax</groupId>
+                                    <artifactId>javaee-endorsed-api</artifactId>
+                                    <version>7.0</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

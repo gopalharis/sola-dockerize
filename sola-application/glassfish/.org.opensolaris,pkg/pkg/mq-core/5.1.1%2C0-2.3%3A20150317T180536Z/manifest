@@ -1,0 +1,20 @@
+set name=fmri value=pkg://release.glassfish.org/mq-core@5.1.1,0-2.3:20150317T180536Z
+set name=authority value=release.glassfish.org
+set name=pkg.maintainer_url value=http://mq.java.net/
+set name=info.classification value=":Message-Oriented Middleware"
+set name=pkg.detailed_url value=http://mq.java.net/about.html
+set name=pkg.summary value="Message Queue Core"
+set name=pkg.upstream_url value=http://mq.java.net/
+set name=pkg.description value="Core client components/files of the Message Queue product.  Message Queue (MQ) is an enterprise quality, production ready, scalable messaging server.  It provides a complete Java Message Service (JMS) implementation for message oriented system integration.  In addition, Message Queue provides the additional enterprise features that are necessary for enterprise deployments, large and small."
+set name=info.source_url value=http://mq.java.net/downloads.html
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license=CDDL pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=mq
+dir group=sys mode=0755 owner=root path=mq/lib
+file f9798321d7bfe90ec9725c87abd4579c103e5926 chash=626cf56fad3856c2be17ad3adae3a0391cf103f6 group=sys mode=0755 owner=root path=mq/lib/imqxm.jar pkg.csize=34186 pkg.size=35686
+file e09d5dc4f8786d416d92cfbb1297e02dc0a5bb8b chash=f9d719c919d57e7d20256fd4be044ee0ebc2a93c group=sys mode=0644 owner=root path=mq/lib/imqjmsra.rar pkg.csize=5302738 pkg.size=5301369
+file ed8bfb638b9dee656eeec34f92ac1d331cfc7ee9 chash=199e90b1ac51494ea0d53d54d16dab1c4e98ca29 group=sys mode=0755 owner=root path=mq/lib/imq.jar pkg.csize=653274 pkg.size=706227
+file f7b25a91f1677084c4ca0b6be6fa811815e63971 chash=44245fa287c04d0ad5bf7f30dbcf9bbf58984b53 group=sys mode=0644 owner=root path=mq/lib/fscontext.jar pkg.csize=92938 pkg.size=102059
+file 8f8c4661ce430755365f61c9ed0a8ec8e7f1e56f chash=9cb95120148fd4bdbcb01b186341d78b85904782 group=sys mode=0644 owner=root path=mq/lib/tyrus-standalone-client.jar pkg.csize=1787975 pkg.size=1997961
+file 032c8d394db19f7f7de48537658a682171a3143c chash=7aae3f3a7769fe71af3f654cb49591e5ffd78cdb group=sys mode=0755 owner=root path=mq/lib/jaxm-api.jar pkg.csize=23376 pkg.size=25570
+file 95aeacca8ed91a3f8a0943996872c633e80a71ec chash=aa6c9f6cb99b5dc15d8b62b2e1635ed51e7e6818 group=sys mode=0755 owner=root path=mq/lib/imqjmx.jar pkg.csize=50227 pkg.size=59382
+file 5faaa3864ff6025ce69809b60d65bda3e358610c chash=2e73ed083cfdb50addb1aced0808ffa79e4f56fa group=sys mode=0755 owner=root path=mq/lib/jms.jar pkg.csize=53371 pkg.size=64009

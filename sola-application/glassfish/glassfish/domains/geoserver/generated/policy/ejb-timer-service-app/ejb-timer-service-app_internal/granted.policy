@@ -1,0 +1,59 @@
+/* AUTOMATICALLY GENERATED ON Fri Sep 18 16:41:58 NZST 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimerIdsOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "createTimer,Local,java.lang.String,long,long,java.lang.String,java.lang.Object,java.util.Date,long,com.sun.ejb.containers.EJBTimerSchedule,javax.ejb.TimerConfig";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "migrateTimers,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimersOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimersOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "remove,Local,java.util.Set";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "cancel,Local,com.sun.ejb.containers.TimerPrimaryKey";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countActiveTimersOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimer,Local,com.sun.ejb.containers.TimerPrimaryKey";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countTimersOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimersOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimerIdsOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimerIdsByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "deleteTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "deleteTimersByApplication,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimerIdsOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimersOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "cancelTimers,Local,java.util.Collection";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countTimersOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countActiveTimersOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countTimersOwnedByServerIds,Local,java.lang.String[]";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimerIdsOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimerIdsByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimerIdsOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimersOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimersOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimersOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countCancelledTimersOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countTimersByApplication,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimerIdsOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countActiveTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimerIdsByContainers,Local,java.util.Collection";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countCancelledTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimerIdsOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countTimersOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "checkStatus,Local,java.lang.String,boolean";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimerIdsOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countCancelledTimersOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimerIdsOwnedBy,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findCancelledTimersOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countTimersByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findTimersOwnedByThisServer,Local,";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "remove,Local,com.sun.ejb.containers.TimerPrimaryKey";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "findActiveTimerIdsByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countCancelledTimersOwnedByThisServerByContainer,Local,long";
+  permission javax.security.jacc.EJBMethodPermission "TimerBean", "countActiveTimersOwnedBy,Local,java.lang.String";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "TimerBean", "**";
+};
+

@@ -1,0 +1,55 @@
+[filter]
+
+[authority_release.glassfish.org]
+origin = http://pkg.glassfish.org/4/release/
+ssl_key = None
+ssl_cert = None
+repo.related_uris = []
+mirrors = []
+repo.description = None
+repo.name = None
+repo.sort_policy = priority
+disabled = False
+alias = None
+prefix = release.glassfish.org
+repo.legal_uris = []
+repo.registered = False
+repo.registration_uri = None
+repo.collection_type = core
+repo.refresh_seconds = 14400
+
+uuid = 9a9d07b0-a0d0-4fef-b810-1bd0e374996f
+
+[variant]
+variant.opensolaris.zone = global
+
+[authority_release.native.glassfish.org]
+origin = http://pkg.glassfish.org/4/native/release/
+ssl_key = None
+ssl_cert = None
+repo.related_uris = []
+mirrors = []
+repo.description = None
+repo.name = None
+repo.sort_policy = priority
+disabled = False
+alias = None
+prefix = release.native.glassfish.org
+repo.legal_uris = []
+repo.registered = False
+repo.registration_uri = None
+repo.collection_type = core
+repo.refresh_seconds = None
+
+uuid = 9a9d07b0-a0d0-4fef-b810-1bd0e374996f
+
+[property]
+display-copyrights = True
+require-optional = False
+send-uuid = True
+image-tou-url = http://glassfish-repo.java.net/terms.html
+description = GlassFish Server is a modular and lightweight Java EE 7 compliant application server. Key features include an OSGi runtime, fast startup time, maven support, and rapid iterative development with Active Redeploy.  GlassFish Server also offers feature-rich administration with the web console, command line, and RESTful API.
+pursue-latest = True
+title = GlassFish 4
+preferred-authority = release.glassfish.org
+flush-content-cache-on-success = False

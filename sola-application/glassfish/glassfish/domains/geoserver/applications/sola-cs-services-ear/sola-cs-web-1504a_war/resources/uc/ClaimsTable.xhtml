@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <cc:interface>
+        <cc:attribute name="claims" type="org.sola.services.ejb.search.repository.entities.ClaimSearchResult[]" />
+    </cc:interface>
+
+    <cc:implementation>
+        <h:dataTable value="#{cc.attrs.claims}" var="s" 
+                     class="table"
+                     headerClass="table-header">
+            <h:column>
+                <f:facet name="header">#{msg.CLAIM_SEARCH_NUMBER}</f:facet>
+                <a href="#{request.contextPath}/claim/ViewClaim.xhtml?id=#{s.id}">#{s.nr}</a>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{msg.CLAIM_SEARCH_DESCRIPTION}</f:facet>
+                    #{s.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{msg.CLAIM_SEARCH_LODGING_DATE}</f:facet>
+                    #{dateBean.formatDate(s.lodgementDate)}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{msg.CLAIM_SEARCH_CLAIMANT_NAME}</f:facet>
+                    #{s.claimantName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{msg.CLAIM_SEARCH_CHALLENGE_EXPIRATION}</f:facet>
+                    #{dateBean.formatDate(s.challengeExpiryDate)}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{msg.GENERAL_LABEL_STATUS}</f:facet>
+                    #{s.statusName}
+            </h:column>
+        </h:dataTable>
+    </cc:implementation>
+</html>

@@ -1,0 +1,267 @@
+/* AUTOMATICALLY GENERATED ON Sat Jan 19 13:45:42 NZDT 2019*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchPartiesProperty,Local,org.sola.services.ejb.search.repository.entities.PartySearchParams,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "isInRole,Local,java.lang.String[]";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getSpatialResultFromSelection,Local,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getUserName,Local,";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getPropertyVerifier,Local,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getCodeEntityList,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getSpatialResultForPublicDisplay,Local,org.sola.services.ejb.search.spatial.QueryForPublicDisplayMap";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getActiveUsers,Local,";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "transform,Local,byte[],int";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getExtentOfPublicDisplayMap,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getMapCenterLabel,Local,byte[]";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getCrsList,Local,";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "setDbConnectionManager,Local,org.sola.services.common.repository.DatabaseConnectionManager";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getQueryListAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getResultObjectFromStatement,Local,java.lang.String,java.util.Map";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getCodeEntityList,Local,java.lang.Class";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "saveEntity,Local,org.sola.services.common.repository.entities.AbstractEntity";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchSpatialObjects,Local,java.lang.String,java.lang.String,int";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getMapSettingList,Local,";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getGenericResultList,Local,java.lang.String,java.util.Map";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchNotifiableParties,Local,org.sola.services.ejb.search.repository.entities.PartySearchParams,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getConfigMapLayerList,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchParties,Local,org.sola.services.ejb.search.repository.entities.PartySearchParams";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getSpatialResult,Local,org.sola.services.ejb.search.spatial.QueryForNavigation";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getPlanCadastreObjects,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getSpatialSearchOptions,Local,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "DashbrdViewAssign";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getAssignedApplications,Local,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "Notify" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "Notify";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnAssignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "BaunitSearch";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchBaUnits,Local,org.sola.services.ejb.search.repository.entities.BaUnitSearchParams";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnView";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getApplicationLog,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchApplications,Local,org.sola.services.ejb.search.repository.entities.ApplicationSearchParams";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "StartService";
+};
+
+grant      principal org.glassfish.security.common.Group "RightsExport" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "RightsExport";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchRightsForExport,Local,org.sola.services.ejb.search.repository.entities.RightsExportParams";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "BaunitCertificate";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "PartySave";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnDispatch";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageBR" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ManageBR";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchBr,Local,org.sola.services.ejb.search.repository.entities.BrSearchParams,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnResubmit";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "systematicRegn";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ManageSecurity";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchUsers,Local,org.sola.services.ejb.search.repository.entities.UserSearchParams";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnUnassignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "SourcePrint";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ChangePassword";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ModerateClaim";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnUnassignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnCreate";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchBaUnits,Local,org.sola.services.ejb.search.repository.entities.BaUnitSearchParams";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnAssignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnWithdraw";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnApprove";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "SourceSearch";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchSources,Local,org.sola.services.ejb.search.repository.entities.SourceSearchParams";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchPowerOfAttorney,Local,org.sola.services.ejb.search.repository.entities.PowerOfAttorneySearchParams";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnStatus";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "RHSave";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "PrintMap";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "DashbrdViewUnassign";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "getUnassignedApplications,Local,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "RevertService";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnValidate";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ManageRefdata";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "saveCodeEntity,Local,org.sola.services.common.repository.entities.AbstractCodeEntity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnArchive";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnEdit";
+  permission javax.security.jacc.EJBMethodPermission "SearchEJB", "searchBaUnits,Local,org.sola.services.ejb.search.repository.entities.BaUnitSearchParams";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnRequisition";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "CancelService";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ApplnReject";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "ReportGenerate";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.EJBRoleRefPermission "SearchEJB", "CompleteService";
+};
+

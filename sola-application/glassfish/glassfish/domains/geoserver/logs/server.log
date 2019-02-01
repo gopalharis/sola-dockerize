@@ -1,0 +1,881 @@
+[2015-05-13T20:40:31.866+1200] [glassfish 4.1] [WARNING] [] [javax.enterprise.web._vs.__asadmin] [tid: _ThreadID=47 _ThreadName=Thread-29] [timeMillis: 1431506431866] [levelValue: 900] [[
+  StandardWrapperValve[FacesServlet]: Servlet.service() for servlet FacesServlet threw exception
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:487)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.flushByteBuffer(TCPNIOUtils.java:149)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.writeCompositeBuffer(TCPNIOUtils.java:87)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:112)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:91)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:261)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:170)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:70)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransportFilter.handleWrite(TCPNIOTransportFilter.java:126)
+	at org.glassfish.grizzly.filterchain.TransportFilter.handleWrite(TransportFilter.java:191)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$8.execute(ExecutorResolver.java:111)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:848)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:817)
+	at org.glassfish.grizzly.http.io.OutputBuffer.flushBuffer(OutputBuffer.java:1024)
+	at org.glassfish.grizzly.http.io.OutputBuffer.write(OutputBuffer.java:680)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:355)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:342)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:161)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.flushAttributes(HtmlResponseWriter.java:1199)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.closeStartIfNecessary(HtmlResponseWriter.java:1117)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.startElement(HtmlResponseWriter.java:646)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderLink(HyperlinkRenderer.java:193)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderEnd(HyperlinkRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeEnd(AbstractRenderer.java:225)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderImageOrText(TreeNodeRenderer.java:369)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderTreeRow(TreeNodeRenderer.java:314)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.encodeEnd(TreeNodeRenderer.java:177)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeRenderer.encodeEnd(TreeRenderer.java:196)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:558)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComponent.encode(LayoutComponent.java:243)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:348)
+	at com.sun.jsftemplating.layout.descriptors.LayoutDefinition.encode(LayoutDefinition.java:246)
+	at com.sun.jsftemplating.layout.LayoutViewHandler.renderView(LayoutViewHandler.java:683)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at com.sun.webui.jsf.util.UploadFilter.doFilter(UploadFilter.java:233)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:678)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:97)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:415)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:282)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:201)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:175)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:561)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
+	at java.lang.Thread.run(Thread.java:744)
+]]
+
+[2015-05-13T20:40:32.608+1200] [glassfish 4.1] [WARNING] [] [javax.enterprise.web._vs.__asadmin] [tid: _ThreadID=46 _ThreadName=Thread-29] [timeMillis: 1431506432608] [levelValue: 900] [[
+  StandardWrapperValve[FacesServlet]: Servlet.service() for servlet FacesServlet threw exception
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:487)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.flushByteBuffer(TCPNIOUtils.java:149)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.writeCompositeBuffer(TCPNIOUtils.java:87)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:112)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:91)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:261)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:170)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:70)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransportFilter.handleWrite(TCPNIOTransportFilter.java:126)
+	at org.glassfish.grizzly.filterchain.TransportFilter.handleWrite(TransportFilter.java:191)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$8.execute(ExecutorResolver.java:111)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:848)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:817)
+	at org.glassfish.grizzly.http.io.OutputBuffer.flushBuffer(OutputBuffer.java:1024)
+	at org.glassfish.grizzly.http.io.OutputBuffer.write(OutputBuffer.java:680)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:355)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:342)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:161)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.flushAttributes(HtmlResponseWriter.java:1199)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.closeStartIfNecessary(HtmlResponseWriter.java:1117)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.startElement(HtmlResponseWriter.java:646)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderLink(HyperlinkRenderer.java:193)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderEnd(HyperlinkRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeEnd(AbstractRenderer.java:225)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderImageOrText(TreeNodeRenderer.java:369)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderTreeRow(TreeNodeRenderer.java:314)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.encodeEnd(TreeNodeRenderer.java:177)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeRenderer.encodeEnd(TreeRenderer.java:196)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:558)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComponent.encode(LayoutComponent.java:243)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:348)
+	at com.sun.jsftemplating.layout.descriptors.LayoutDefinition.encode(LayoutDefinition.java:246)
+	at com.sun.jsftemplating.layout.LayoutViewHandler.renderView(LayoutViewHandler.java:683)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at com.sun.webui.jsf.util.UploadFilter.doFilter(UploadFilter.java:233)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:678)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:97)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:415)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:282)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:201)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:175)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:561)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
+	at java.lang.Thread.run(Thread.java:744)
+]]
+
+[2015-05-14T19:24:55.660+1200] [glassfish 4.1] [WARNING] [] [javax.enterprise.web._vs.__asadmin] [tid: _ThreadID=42 _ThreadName=Thread-29] [timeMillis: 1431588295660] [levelValue: 900] [[
+  StandardWrapperValve[FacesServlet]: Servlet.service() for servlet FacesServlet threw exception
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:487)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.flushByteBuffer(TCPNIOUtils.java:149)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.writeCompositeBuffer(TCPNIOUtils.java:87)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:112)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:91)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:261)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:170)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:70)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransportFilter.handleWrite(TCPNIOTransportFilter.java:126)
+	at org.glassfish.grizzly.filterchain.TransportFilter.handleWrite(TransportFilter.java:191)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$8.execute(ExecutorResolver.java:111)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:848)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:817)
+	at org.glassfish.grizzly.http.io.OutputBuffer.flushBuffer(OutputBuffer.java:1024)
+	at org.glassfish.grizzly.http.io.OutputBuffer.write(OutputBuffer.java:680)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:355)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:342)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:161)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.flushAttributes(HtmlResponseWriter.java:1199)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.closeStartIfNecessary(HtmlResponseWriter.java:1117)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.startElement(HtmlResponseWriter.java:646)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderLink(HyperlinkRenderer.java:193)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderEnd(HyperlinkRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeEnd(AbstractRenderer.java:225)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderImageOrText(TreeNodeRenderer.java:369)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderTreeRow(TreeNodeRenderer.java:314)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.encodeEnd(TreeNodeRenderer.java:177)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeRenderer.encodeEnd(TreeRenderer.java:196)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:558)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComponent.encode(LayoutComponent.java:243)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:348)
+	at com.sun.jsftemplating.layout.descriptors.LayoutDefinition.encode(LayoutDefinition.java:246)
+	at com.sun.jsftemplating.layout.LayoutViewHandler.renderView(LayoutViewHandler.java:683)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at com.sun.webui.jsf.util.UploadFilter.doFilter(UploadFilter.java:233)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:678)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:97)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:415)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:282)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:201)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:175)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:561)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
+	at java.lang.Thread.run(Thread.java:744)
+]]
+
+[2015-05-22T15:19:46.949+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=44 _ThreadName=Thread-17] [timeMillis: 1432264786949] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-22T15:19:51.596+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=44 _ThreadName=Thread-17] [timeMillis: 1432264791596] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-22T15:33:11.836+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=29 _ThreadName=Thread-17] [timeMillis: 1432265591836] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T15:52:15.849+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=213 _ThreadName=Thread-17] [timeMillis: 1432266735849] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T15:52:15.863+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=213 _ThreadName=Thread-17] [timeMillis: 1432266735863] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-22T15:53:09.472+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-17] [timeMillis: 1432266789472] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-22T15:53:13.255+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-17] [timeMillis: 1432266793255] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-22T15:54:26.666+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=25 _ThreadName=Thread-17] [timeMillis: 1432266866666] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T16:10:07.795+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=1038 _ThreadName=Thread-17] [timeMillis: 1432267807795] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T16:10:07.806+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=1038 _ThreadName=Thread-17] [timeMillis: 1432267807806] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-22T16:59:25.052+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432270765052] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-22T16:59:28.443+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432270768443] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-22T17:00:17.626+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=146 _ThreadName=Thread-17] [timeMillis: 1432270817626] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-22T17:02:56.617+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432270976617] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-22T17:03:00.100+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432270980100] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-22T17:03:43.843+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=28 _ThreadName=Thread-17] [timeMillis: 1432271023843] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T17:07:57.336+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=226 _ThreadName=Thread-17] [timeMillis: 1432271277336] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T17:07:57.353+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=226 _ThreadName=Thread-17] [timeMillis: 1432271277353] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-22T17:11:17.273+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432271477273] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-22T17:11:21.121+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432271481121] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-22T17:12:02.993+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=25 _ThreadName=Thread-17] [timeMillis: 1432271522993] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T17:14:24.258+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=168 _ThreadName=Thread-17] [timeMillis: 1432271664258] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-22T17:14:24.270+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=168 _ThreadName=Thread-17] [timeMillis: 1432271664270] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-25T11:20:43.187+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432509643187] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-25T11:20:47.051+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1432509647051] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-25T11:22:37.910+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=28 _ThreadName=Thread-17] [timeMillis: 1432509757910] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-25T16:34:24.802+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=562 _ThreadName=Thread-17] [timeMillis: 1432528464802] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-25T16:34:24.805+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=562 _ThreadName=Thread-17] [timeMillis: 1432528464805] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-26T13:27:19.833+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=17 _ThreadName=Thread-17] [timeMillis: 1432603639833] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-26T13:27:24.325+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=17 _ThreadName=Thread-17] [timeMillis: 1432603644325] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-26T13:51:46.629+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=161 _ThreadName=Thread-17] [timeMillis: 1432605106629] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-26T18:19:55.956+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-17] [timeMillis: 1432621195956] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-26T18:19:59.700+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-17] [timeMillis: 1432621199700] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-26T19:18:27.411+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=164 _ThreadName=Thread-17] [timeMillis: 1432624707411] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-30T23:15:03.653+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=23 _ThreadName=Thread-16] [timeMillis: 1433020503653] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-30T23:28:43.294+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=19 _ThreadName=Thread-18] [timeMillis: 1433021323294] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-30T23:28:44.986+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=19 _ThreadName=Thread-18] [timeMillis: 1433021324986] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-30T23:31:12.907+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=29 _ThreadName=Thread-18] [timeMillis: 1433021472907] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-31T07:55:26.888+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=319 _ThreadName=Thread-18] [timeMillis: 1433051726888] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-31T07:55:26.894+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=319 _ThreadName=Thread-18] [timeMillis: 1433051726894] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-31T07:56:09.545+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=17 _ThreadName=Thread-17] [timeMillis: 1433051769545] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-31T07:56:11.203+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=17 _ThreadName=Thread-17] [timeMillis: 1433051771203] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-31T07:57:10.824+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=27 _ThreadName=Thread-17] [timeMillis: 1433051830824] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-31T07:58:32.451+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=170 _ThreadName=Thread-17] [timeMillis: 1433051912451] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-31T07:58:32.458+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=170 _ThreadName=Thread-17] [timeMillis: 1433051912458] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-31T08:03:41.060+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1433052221060] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-31T08:03:42.707+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-17] [timeMillis: 1433052222707] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-31T09:13:23.042+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=27 _ThreadName=Thread-17] [timeMillis: 1433056403042] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-05-31T09:20:16.238+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=192 _ThreadName=Thread-17] [timeMillis: 1433056816238] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-05-31T09:20:16.250+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=192 _ThreadName=Thread-17] [timeMillis: 1433056816250] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-31T09:57:11.854+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=19 _ThreadName=Thread-16] [timeMillis: 1433059031854] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-31T09:57:34.133+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=19 _ThreadName=Thread-16] [timeMillis: 1433059054133] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-31T09:59:46.817+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=165 _ThreadName=Thread-16] [timeMillis: 1433059186817] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-05-31T10:08:14.412+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=18 _ThreadName=Thread-15] [timeMillis: 1433059694412] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-05-31T10:08:31.537+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=18 _ThreadName=Thread-15] [timeMillis: 1433059711537] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-05-31T10:10:14.889+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=191 _ThreadName=Thread-15] [timeMillis: 1433059814889] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-06-01T21:55:07.808+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=23 _ThreadName=Thread-16] [timeMillis: 1433188507808] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-06-01T21:55:24.972+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=23 _ThreadName=Thread-16] [timeMillis: 1433188524972] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-06-01T21:57:13.665+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=34 _ThreadName=Thread-16] [timeMillis: 1433188633665] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-06-01T22:00:02.861+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=229 _ThreadName=Thread-16] [timeMillis: 1433188802861] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-06-01T22:00:02.908+0200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=229 _ThreadName=Thread-16] [timeMillis: 1433188802908] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T09:46:37.838+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=22 _ThreadName=Thread-18] [timeMillis: 1442526397838] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T09:46:42.370+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=22 _ThreadName=Thread-18] [timeMillis: 1442526402370] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T10:31:33.676+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=266 _ThreadName=Thread-18] [timeMillis: 1442529093676] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T10:32:41.028+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442529161028] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T10:32:44.989+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442529164989] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T10:55:13.627+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=171 _ThreadName=Thread-16] [timeMillis: 1442530513627] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T14:10:14.984+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442542214984] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T14:10:19.326+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442542219326] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T14:11:57.266+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=144 _ThreadName=Thread-16] [timeMillis: 1442542317266] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T14:12:12.445+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442542332445] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T14:12:16.660+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442542336660] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T14:30:29.560+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=169 _ThreadName=Thread-16] [timeMillis: 1442543429560] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T14:30:52.831+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442543452831] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T14:30:56.792+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442543456792] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T14:33:38.171+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=162 _ThreadName=Thread-16] [timeMillis: 1442543618171] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T14:34:39.999+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442543679999] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T14:34:44.242+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442543684242] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T14:37:05.345+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=174 _ThreadName=Thread-16] [timeMillis: 1442543825345] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T14:37:39.916+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442543859916] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T14:37:44.252+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442543864252] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T14:41:51.445+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=180 _ThreadName=Thread-16] [timeMillis: 1442544111445] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T16:14:59.233+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442549699233] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T16:15:03.475+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442549703475] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T16:31:24.231+1200] [glassfish 4.1] [WARNING] [] [javax.enterprise.web._vs.__asadmin] [tid: _ThreadID=44 _ThreadName=Thread-16] [timeMillis: 1442550684231] [levelValue: 900] [[
+  StandardWrapperValve[FacesServlet]: Servlet.service() for servlet FacesServlet threw exception
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.flushByteBuffer(TCPNIOUtils.java:149)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.writeCompositeBuffer(TCPNIOUtils.java:87)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:112)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:91)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:261)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:170)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:70)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransportFilter.handleWrite(TCPNIOTransportFilter.java:126)
+	at org.glassfish.grizzly.filterchain.TransportFilter.handleWrite(TransportFilter.java:191)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$8.execute(ExecutorResolver.java:111)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:848)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:817)
+	at org.glassfish.grizzly.http.io.OutputBuffer.flushBuffer(OutputBuffer.java:1024)
+	at org.glassfish.grizzly.http.io.OutputBuffer.write(OutputBuffer.java:680)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:355)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:342)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:161)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.flushAttributes(HtmlResponseWriter.java:1199)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.endElement(HtmlResponseWriter.java:570)
+	at com.sun.webui.jsf.renderkit.html.RbCbRendererBase.renderInput(RbCbRendererBase.java:479)
+	at com.sun.webui.jsf.renderkit.html.RbCbRendererBase.renderSelection(RbCbRendererBase.java:355)
+	at com.sun.webui.jsf.renderkit.html.CheckboxRenderer.renderEnd(CheckboxRenderer.java:343)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeEnd(AbstractRenderer.java:225)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.PropertyRenderer.renderPropertyComponents(PropertyRenderer.java:195)
+	at com.sun.webui.jsf.renderkit.html.PropertyRenderer.encodeEnd(PropertyRenderer.java:156)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.PropertySheetSectionRenderer.renderProperties(PropertySheetSectionRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.PropertySheetSectionRenderer.renderPropertySheetSection(PropertySheetSectionRenderer.java:143)
+	at com.sun.webui.jsf.renderkit.html.PropertySheetSectionRenderer.encodeEnd(PropertySheetSectionRenderer.java:86)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.PropertySheetRenderer.renderPropertySheetSections(PropertySheetRenderer.java:164)
+	at com.sun.webui.jsf.renderkit.html.PropertySheetRenderer.encodeEnd(PropertySheetRenderer.java:114)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:96)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeChildren(AbstractRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.MarkupRenderer.encodeChildren(MarkupRenderer.java:98)
+	at javax.faces.component.UIComponentBase.encodeChildren(UIComponentBase.java:889)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:551)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComponent.encode(LayoutComponent.java:243)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:348)
+	at com.sun.jsftemplating.layout.descriptors.LayoutDefinition.encode(LayoutDefinition.java:246)
+	at com.sun.jsftemplating.layout.LayoutViewHandler.renderView(LayoutViewHandler.java:683)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at com.sun.webui.jsf.util.UploadFilter.doFilter(UploadFilter.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:678)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:97)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:415)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:282)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:201)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:175)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:561)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
+	at java.lang.Thread.run(Thread.java:745)
+]]
+
+[2015-09-18T16:38:31.858+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=207 _ThreadName=Thread-16] [timeMillis: 1442551111858] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-18T16:39:39.574+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-16] [timeMillis: 1442551179574] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-18T16:39:43.615+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-16] [timeMillis: 1442551183615] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-18T17:06:08.748+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=197 _ThreadName=Thread-16] [timeMillis: 1442552768748] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-19T08:25:31.346+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1442607931346] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-19T08:25:36.385+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1442607936385] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-19T08:35:07.184+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=182 _ThreadName=Thread-16] [timeMillis: 1442608507184] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-20T09:02:08.410+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=17 _ThreadName=Thread-16] [timeMillis: 1442696528410] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-20T09:02:13.831+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=17 _ThreadName=Thread-16] [timeMillis: 1442696533831] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-20T10:09:31.520+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=211 _ThreadName=Thread-16] [timeMillis: 1442700571520] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-20T10:16:34.631+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442700994631] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-20T10:16:38.655+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=14 _ThreadName=Thread-16] [timeMillis: 1442700998655] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-20T10:24:37.725+1200] [glassfish 4.1] [WARNING] [] [javax.enterprise.web._vs.__asadmin] [tid: _ThreadID=44 _ThreadName=Thread-16] [timeMillis: 1442701477725] [levelValue: 900] [[
+  StandardWrapperValve[FacesServlet]: Servlet.service() for servlet FacesServlet threw exception
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.flushByteBuffer(TCPNIOUtils.java:149)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.writeCompositeBuffer(TCPNIOUtils.java:87)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:112)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:91)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:261)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:170)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:70)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransportFilter.handleWrite(TCPNIOTransportFilter.java:126)
+	at org.glassfish.grizzly.filterchain.TransportFilter.handleWrite(TransportFilter.java:191)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$8.execute(ExecutorResolver.java:111)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:848)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:817)
+	at org.glassfish.grizzly.http.io.OutputBuffer.flushBuffer(OutputBuffer.java:1024)
+	at org.glassfish.grizzly.http.io.OutputBuffer.write(OutputBuffer.java:680)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:355)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:342)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:161)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.flushAttributes(HtmlResponseWriter.java:1199)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.closeStartIfNecessary(HtmlResponseWriter.java:1117)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.startElement(HtmlResponseWriter.java:646)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderLink(HyperlinkRenderer.java:193)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderEnd(HyperlinkRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeEnd(AbstractRenderer.java:225)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderImageOrText(TreeNodeRenderer.java:369)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderTreeRow(TreeNodeRenderer.java:314)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.encodeEnd(TreeNodeRenderer.java:177)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeRenderer.encodeEnd(TreeRenderer.java:196)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:558)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComponent.encode(LayoutComponent.java:243)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:348)
+	at com.sun.jsftemplating.layout.descriptors.LayoutDefinition.encode(LayoutDefinition.java:246)
+	at com.sun.jsftemplating.layout.LayoutViewHandler.renderView(LayoutViewHandler.java:683)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at com.sun.webui.jsf.util.UploadFilter.doFilter(UploadFilter.java:233)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:678)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:97)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:415)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:282)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:201)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:175)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:561)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
+	at java.lang.Thread.run(Thread.java:745)
+]]
+
+[2015-09-20T10:24:37.726+1200] [glassfish 4.1] [WARNING] [] [javax.enterprise.web._vs.__asadmin] [tid: _ThreadID=154 _ThreadName=Thread-16] [timeMillis: 1442701477726] [levelValue: 900] [[
+  StandardWrapperValve[FacesServlet]: Servlet.service() for servlet FacesServlet threw exception
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.flushByteBuffer(TCPNIOUtils.java:149)
+	at org.glassfish.grizzly.nio.transport.TCPNIOUtils.writeCompositeBuffer(TCPNIOUtils.java:87)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:112)
+	at org.glassfish.grizzly.nio.transport.TCPNIOAsyncQueueWriter.write0(TCPNIOAsyncQueueWriter.java:91)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:261)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:170)
+	at org.glassfish.grizzly.nio.AbstractNIOAsyncQueueWriter.write(AbstractNIOAsyncQueueWriter.java:70)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransportFilter.handleWrite(TCPNIOTransportFilter.java:126)
+	at org.glassfish.grizzly.filterchain.TransportFilter.handleWrite(TransportFilter.java:191)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$8.execute(ExecutorResolver.java:111)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:848)
+	at org.glassfish.grizzly.filterchain.FilterChainContext.write(FilterChainContext.java:817)
+	at org.glassfish.grizzly.http.io.OutputBuffer.flushBuffer(OutputBuffer.java:1024)
+	at org.glassfish.grizzly.http.io.OutputBuffer.write(OutputBuffer.java:680)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:355)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:342)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:161)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.flushAttributes(HtmlResponseWriter.java:1199)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.closeStartIfNecessary(HtmlResponseWriter.java:1117)
+	at com.sun.faces.renderkit.html_basic.HtmlResponseWriter.startElement(HtmlResponseWriter.java:646)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderLink(HyperlinkRenderer.java:193)
+	at com.sun.webui.jsf.renderkit.html.HyperlinkRenderer.renderEnd(HyperlinkRenderer.java:184)
+	at com.sun.webui.jsf.renderkit.html.AbstractRenderer.encodeEnd(AbstractRenderer.java:225)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderImageOrText(TreeNodeRenderer.java:369)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.renderTreeRow(TreeNodeRenderer.java:314)
+	at com.sun.webui.jsf.renderkit.html.TreeNodeRenderer.encodeEnd(TreeNodeRenderer.java:177)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.webui.jsf.util.RenderingUtilities.renderComponent(RenderingUtilities.java:99)
+	at com.sun.webui.jsf.renderkit.html.TreeRenderer.encodeEnd(TreeRenderer.java:196)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:919)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:558)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encodeChild(LayoutElementBase.java:555)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComponent.encode(LayoutComponent.java:243)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutComposition.encodeThis(LayoutComposition.java:161)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:330)
+	at com.sun.jsftemplating.layout.descriptors.LayoutElementBase.encode(LayoutElementBase.java:348)
+	at com.sun.jsftemplating.layout.descriptors.LayoutDefinition.encode(LayoutDefinition.java:246)
+	at com.sun.jsftemplating.layout.LayoutViewHandler.renderView(LayoutViewHandler.java:683)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1682)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:344)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at com.sun.webui.jsf.util.UploadFilter.doFilter(UploadFilter.java:233)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:256)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:214)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:316)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:160)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:734)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:678)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:97)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:174)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:415)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:282)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:459)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:167)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:201)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:175)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:235)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:561)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:117)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:56)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:137)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:565)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:545)
+	at java.lang.Thread.run(Thread.java:745)
+]]
+
+[2015-09-20T10:44:52.373+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=174 _ThreadName=Thread-16] [timeMillis: 1442702692373] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-22T08:17:25.776+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1442866645776] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-22T08:17:31.246+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1442866651246] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-22T08:22:37.948+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=148 _ThreadName=Thread-16] [timeMillis: 1442866957948] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-09-22T13:15:11.896+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1442884511896] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-09-22T13:15:16.440+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1442884516440] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-09-22T13:45:57.521+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=28 _ThreadName=Thread-16] [timeMillis: 1442886357521] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-09-22T15:37:37.462+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=184 _ThreadName=Thread-16] [timeMillis: 1442893057462] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-09-22T15:37:37.467+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=184 _ThreadName=Thread-16] [timeMillis: 1442893057467] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-10-21T20:37:50.121+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1445413070121] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-10-21T20:37:54.643+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1445413074643] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-10-21T23:23:38.469+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=253 _ThreadName=Thread-16] [timeMillis: 1445423018469] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2015-10-22T17:14:33.389+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1445487273389] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2015-10-22T17:14:38.263+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1445487278263] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2015-10-22T17:19:33.866+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=26 _ThreadName=Thread-16] [timeMillis: 1445487573866] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2015-10-22T18:53:06.816+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=210 _ThreadName=Thread-16] [timeMillis: 1445493186816] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2015-10-22T18:53:06.818+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=210 _ThreadName=Thread-16] [timeMillis: 1445493186818] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2016-04-15T14:47:36.614+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1460688456614] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2016-04-15T14:47:41.023+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=15 _ThreadName=Thread-16] [timeMillis: 1460688461023] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2016-04-15T17:37:14.038+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=218 _ThreadName=Thread-16] [timeMillis: 1460698634038] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2016-04-18T12:47:37.391+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-16] [timeMillis: 1460940457391] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2016-04-18T12:47:42.379+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-16] [timeMillis: 1460940462379] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2016-04-18T17:45:31.340+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=252 _ThreadName=Thread-16] [timeMillis: 1460958331340] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2016-04-19T09:36:15.059+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-16] [timeMillis: 1461015375059] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2016-04-19T09:36:19.960+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=16 _ThreadName=Thread-16] [timeMillis: 1461015379960] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2016-04-19T20:30:06.506+1200] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=301 _ThreadName=Thread-16] [timeMillis: 1461054606506] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2019-01-14T11:50:20.759+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=19 _ThreadName=Thread-21] [timeMillis: 1547419820759] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2019-01-14T11:50:23.966+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=19 _ThreadName=Thread-21] [timeMillis: 1547419823966] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+
+[2019-01-14T11:52:03.803+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=34 _ThreadName=Thread-21] [timeMillis: 1547419923803] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring FrameworkServlet 'dispatcher'
+
+[2019-01-14T11:53:26.827+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=225 _ThreadName=Thread-21] [timeMillis: 1547420006827] [levelValue: 800] WebModule[null] ServletContext.log():Destroying Spring FrameworkServlet 'dispatcher'
+
+[2019-01-14T11:53:26.831+1300] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=225 _ThreadName=Thread-21] [timeMillis: 1547420006831] [levelValue: 800] WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+
+[2019-01-26T22:41:17.882+0530] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=23 _ThreadName=Thread-21] [timeMillis: 1548522677882] [levelValue: 800] WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+
+[2019-01-26T22:41:19.442+0530] [glassfish 4.1] [INFO] [] [javax.enterprise.web._vs.server] [tid: _ThreadID=23 _ThreadName=Thread-21] [timeMillis: 1548522679442] [levelValue: 800] WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+

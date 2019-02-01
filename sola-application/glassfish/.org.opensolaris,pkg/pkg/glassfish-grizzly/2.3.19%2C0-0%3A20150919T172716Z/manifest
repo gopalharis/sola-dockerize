@@ -1,0 +1,9 @@
+set name=fmri value=pkg://release.glassfish.org/glassfish-grizzly@2.3.19,0-0:20150919T172716Z
+set name=authority value=release.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="Grizzly is an Java NIO framework for building scalable application. It also offers embeddable components supporting HTTP, Bayeux Protocol, Servlet (Partially) and Comet. For more information, see: https://grizzly.dev.java.net/.  GlassFish Server is a modular and lightweight Java EE 7 compliant application server. Key features include an OSGi runtime, fast startup time, maven support, and rapid iterative development with Active Redeploy.  GlassFish Server also offers feature-rich administration with the web console, command line, and RESTful API."
+set name=pkg.summary value="Grizzly NIO Framework"
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/modules
+file 7b4fcbb38c44e3a7f6e5ff068e0258d5c581a92f chash=575778a3dcd4c0009cbb9aff4d09f88a12f0074c group=sys mode=0644 owner=root path=glassfish/modules/nucleus-grizzly-all.jar pkg.csize=1456621 pkg.size=1608250

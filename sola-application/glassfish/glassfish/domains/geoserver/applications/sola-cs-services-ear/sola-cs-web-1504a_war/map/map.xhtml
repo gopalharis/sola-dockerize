@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:uc="http://xmlns.jcp.org/jsf/composite/uc">
+    <h:body>
+        <ui:composition template="../templates/MapTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.MAP_PAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <div class="PageName">
+                    <i class="glyphicon glyphicon-globe"></i> #{msg.MAP_PAGE_TITLE}
+                </div>
+                <div style="padding: 10px;">
+                    <uc:MapClaims></uc:MapClaims>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

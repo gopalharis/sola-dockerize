@@ -1,0 +1,259 @@
+/* AUTOMATICALLY GENERATED ON Sat Jan 19 13:45:42 NZDT 2019*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectsByService,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSpatialUnitGroupsByIds,Local,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObject,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectByAllParts,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSpatialUnitTemporaryListByTransaction,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectTargetsByTransaction,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "setDbConnectionManager,Local,org.sola.services.common.repository.DatabaseConnectionManager";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "saveSpatialUnitGroups,Local,java.util.List,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getLandUseTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCodeEntityList,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "saveSpatialUnits,Local,java.util.List,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getHierarchyLevels,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getUserName,Local,";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "isInRole,Local,java.lang.String[]";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectsByBaUnit,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSpatialUnits,Local,byte[],java.lang.String,java.lang.Integer";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCodeEntityList,Local,java.lang.Class";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "saveCadastreObject,Local,org.sola.services.ejb.cadastre.repository.entities.CadastreObject";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectsByTransaction,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectNode,Local,double,double,double,double,int,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectNodeTargetsByTransaction,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSpatialValueArea,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getNewCadastreObjectIdentifier,Local,byte[],java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectNodePotential,Local,double,double,double,double,int,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSpatialUnitGroups,Local,byte[],java.lang.Integer,java.lang.Integer";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "saveEntity,Local,org.sola.services.common.repository.entities.AbstractEntity";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getLevels,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectRedefinitionTargetsByTransaction,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSpatialUnitsByIds,Local,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getSurveyPointsByTransaction,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjects,Local,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectByParts,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "getCadastreObjectByPoint,Local,double,double,int,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "DashbrdViewAssign";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "Notify" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "Notify";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnAssignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "BaunitSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnView";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "StartService";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "BaunitCertificate";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "PartySave";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnDispatch";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnResubmit";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "systematicRegn";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ManageSecurity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnUnassignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "SourcePrint";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ChangePassword";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ModerateClaim";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnUnassignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnCreate";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnAssignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnWithdraw";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnApprove";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "ChangeStatusOfCadastreObjects,Local,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "approveCadastreRedefinition,Local,java.lang.String";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "SourceSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnStatus";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "RHSave";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "PrintMap";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "DashbrdViewUnassign";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "RevertService";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnValidate";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ManageRefdata";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "saveCodeEntity,Local,org.sola.services.common.repository.entities.AbstractCodeEntity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnArchive";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnEdit";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnRequisition";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "CancelService";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ApplnReject";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "ReportGenerate";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.EJBRoleRefPermission "CadastreEJB", "CompleteService";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "ChangeStatusOfCadastreObjects,Local,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CadastreEJB", "approveCadastreRedefinition,Local,java.lang.String";
+};
+

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: Andrew
+Class-Path: slf4j-api-1.5.8.jar mybatis-3.0.6.jar sola-cs-services-com
+ mon-1504a.jar sola-cs-common-1504a.jar pdf-renderer-1.0.5.jar sansela
+ n-0.97-incubator.jar slf4j-nop-1.6.1.jar jcifs-1.3.17.jar servlet-api
+ -2.4.jar commons-io-2.4.jar sola-cs-messaging-1504a.jar sola-cs-cache
+ -1504a.jar jackson-core-asl-1.9.10.jar dozer-5.3.2.jar commons-beanut
+ ils-1.8.3.jar commons-logging-1.1.1.jar commons-lang-2.5.jar jts-1.13
+ .jar
+Created-By: Apache Maven
+Build-Jdk: 1.7.0_51
+

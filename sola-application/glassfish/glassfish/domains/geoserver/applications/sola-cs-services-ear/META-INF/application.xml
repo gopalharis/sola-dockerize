@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+  <display-name>sola-cs-services-ear</display-name>
+  <module>
+    <ejb>sola-cs-system-1504a.jar</ejb>
+  </module>
+  <module>
+    <ejb>sola-cs-search-1504a.jar</ejb>
+  </module>
+  <module>
+    <ejb>sola-cs-cache-1504a.jar</ejb>
+  </module>
+  <module>
+    <ejb>sola-cs-scheduler-1504a.jar</ejb>
+  </module>
+  <module>
+    <ejb>sola-cs-claim-1504a.jar</ejb>
+  </module>
+  <module>
+    <ejb>sola-cs-refdata-1504a.jar</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>sola-admin-clients-web-1504a.war</web-uri>
+      <context-root>/admin</context-root>
+    </web>
+  </module>
+  <module>
+    <web>
+      <web-uri>sola-cs-web-1504a.war</web-uri>
+      <context-root>/</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>sola-cs-admin-1504a.jar</ejb>
+  </module>
+</application>

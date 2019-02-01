@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:uc="http://xmlns.jcp.org/jsf/composite/uc"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <cc:interface>
+        <cc:attribute name="searchByUser" type="java.lang.Boolean" default="false" />
+    </cc:interface>
+
+    <cc:implementation>
+        <f:metadata>
+            <f:event listener="#{claimSearchComponentBean.pageLoad(cc.attrs.searchByUser)}" type="preRenderView" />
+        </f:metadata>
+
+        <table border="0" width="100%">
+            <tbody>
+                <tr>
+                    <td class="table-cell" style="width: 130px;">
+                        <h:outputLabel for="txtClaimNumber">
+                            #{msg.CLAIM_SEARCH_NUMBER}
+                        </h:outputLabel>
+                        <h:inputText id="txtClaimNumber" 
+                                     value="#{claimSearchComponentBean.searchParams.claimNumber}" 
+                                     class="form-control"
+                                     maxlength="20"
+                                     autocomplete="off" />
+                    </td>
+                    <td class="table-cell">
+                        <h:outputLabel for="txtDescription">
+                            #{msg.CLAIM_SEARCH_DESCRIPTION}
+                        </h:outputLabel>
+                        <h:inputText id="txtDescription" 
+                                     value="#{claimSearchComponentBean.searchParams.description}" 
+                                     class="form-control"
+                                     maxlength="200"
+                                     autocomplete="off" />
+                    </td>
+                    <td class="table-cell" style="width: 180px;">
+                        <h:outputLabel for="txtDateFrom">
+                            #{msg.CLAIM_SEARCH_LODGING_DATE_FROM}
+                        </h:outputLabel>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+                            <h:inputText id="txtDateFrom" 
+                                         value="#{claimSearchComponentBean.lodgementDateFrom}"  
+                                         class="form-control DateField"
+                                         maxlength="10"
+                                         autocomplete="off" />
+                        </div>
+                    </td>
+                    <td class="table-cell" style="width: 180px;">
+                        <h:outputLabel for="txtDateTo">
+                            #{msg.CLAIM_SEARCH_LODGING_DATE_TO}
+                        </h:outputLabel>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+                            <h:inputText id="txtDateTo" 
+                                         value="#{claimSearchComponentBean.lodgementDateTo}"  
+                                         class="form-control DateField"
+                                         maxlength="10"
+                                         autocomplete="off" />
+                        </div>
+                    </td>
+                    <td class="table-cell">
+                        <h:outputLabel for="txtClaimantName">
+                            #{msg.CLAIM_SEARCH_CLAIMANT_NAME}
+                        </h:outputLabel>
+                        <h:inputText id="txtClaimantName" 
+                                     value="#{claimSearchComponentBean.searchParams.claimantName}" 
+                                     class="form-control"
+                                     maxlength="200"
+                                     autocomplete="off" />
+                    </td>
+                    <td class="table-cell" style="width: 150px;">
+                        <h:outputLabel for="cbxStatus">
+                            #{msg.GENERAL_LABEL_STATUS}
+                        </h:outputLabel>
+                        <h:selectOneListbox
+                            id="cbxStatus" 
+                            style="line-height:27px;"
+                            size="1"
+                            value="#{claimSearchComponentBean.searchParams.statusCode}"
+                            class="form-control">
+                            <f:selectItems value="#{claimSearchComponentBean.getClaimStatuses(true)}" var="c"
+                                           itemLabel="#{c.displayValue}" 
+                                           itemValue="#{c.code}" />
+                        </h:selectOneListbox>
+                    </td>
+                    <td style="width: 90px;">
+                        <h:outputLabel>
+                            &nbsp;
+                        </h:outputLabel><br />
+                        <h:commandButton value="#{msg.GENERAL_LABEL_SEARCH}" 
+                                         class="btn btn-default" 
+                                         action="#{claimSearchComponentBean.search(cc.attrs.searchByUser)}" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="LineSpace"></div>
+        <div class="LineSpace"></div>
+
+        <h:panelGroup layout="block" rendered="#{claimSearchComponentBean.hasSearchResults}">
+            <uc:ClaimsTable id="ctrlClaimSearchResults" claims="#{claimSearchComponentBean.searchResult}" />
+        </h:panelGroup>
+        <h:panelGroup layout="block" rendered="#{claimSearchComponentBean.postback and not claimSearchComponentBean.hasSearchResults}">
+            <div class="alert alert-warning">#{msg.CLAIM_SEARCH_NOTHING_FOUND}</div>
+        </h:panelGroup>
+    </cc:implementation>
+</html>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:uc="http://xmlns.jcp.org/jsf/composite/uc"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:body>
+        <ui:composition template="../templates/EmptyMapTemplate.xhtml">
+            <ui:define name="title">
+                #{claimPageBean.header}
+            </ui:define>
+            <ui:define name="head2">
+                <style>
+                    body{
+                        background-color: #fff;
+                        margin: 20px;
+                    }
+                    .headerCaption{
+                        vertical-align: middle;height: 30px; background-color: #ddd;font-weight: bold;padding: 5px 0 0 5px;border-top: #aaa solid 1px;
+                    }
+                    .contentTable td, .contentTable th{
+                        padding: 8px 5px;
+                        font-size: 13px;
+                    }
+                    .contentTable th{
+                        font-weight: bold;
+                        border-bottom: #888 dotted 1px;
+                    }
+                </style>
+                <script>
+                    sourceCrs = "EPSG:4326";
+                    destCrs = "EPSG:3857";
+
+                    Ext.onReady(function() {
+                        map = new OpenLayers.Map('map', {
+                            controls: [],
+                            div: "map",
+                            allOverlays: false,
+                            maxResolution: 19.296875,
+                            projection: destCrs,
+                            displayProjection: sourceCrs,
+                            units: 'm',
+                            zoom: 5
+                        });
+
+                        var gsat = new OpenLayers.Layer.Google("Google Earth", {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22});
+                        var layers = [];                
+                        layers.push(gsat);
+
+                        <ui:repeat var = "l" value = "#{mapSettingsBean.layersArray}" varStatus = "r">
+                            <ui:fragment rendered = "#{l.typeCode eq 'wms' and l.useForOpenTenure}">
+                                // Add WMS layers
+                                layers.push(new OpenLayers.Layer.WMS("#{l.title}", "#{l.url}",
+                                            {layers: '#{l.wmsLayers}', transparent: 'true'}));
+                            </ui:fragment>
+                        </ui:repeat>
+
+                        var wkt = new OpenLayers.Format.WKT();
+                        var communityArea = wkt.read("#{mapSettingsBean.communityArea}");
+                        communityArea.geometry.transform(sourceCrs, destCrs);
+
+                        var maxExtentBounds = communityArea.geometry.getBounds();
+                        var initialZoomBounds = maxExtentBounds;
+                        
+                        // Add community area
+                        var layerCommunityArea = new OT.Map.Layer.VectorLayer(
+                                OT.Map.LAYER_IDS.COMMUNITY_AREA,
+                                "#{msg.MAP_CONTROL_COMMUNITY_LAYER_NAME}",
+                                {
+                                    isEditable: false,
+                                    styleMap: OT.Map.Styles.styleMapCommunityLayer
+                                });
+                        layerCommunityArea.addFeatures([communityArea]);
+
+                        layers.push(layerCommunityArea);
+                
+                        <c:if test="#{not empty claimPageBean.claim.locationsArray}">
+                            // Add aditional location layer
+                            var layerAdditionalLocations = new OT.Map.Layer.VectorLayer(
+                                    OT.Map.LAYER_IDS.CLAIM_ADDITIONAL_LOCATIONS,
+                                    "#{msg.MAP_CONTROL_LOCATIONS_LAYER_TITLE}",
+                                    {styleMap: OT.Map.Styles.styleMapLocations,
+                                        virtualNodeStyle: OT.Map.Styles.styleLocationsNode,
+                                        isEditable: false
+                                    });
+                            layers.push(layerAdditionalLocations);
+
+                            <c:if test = "#{not empty claimPageBean.claim.locationsArray}">
+                                var claimAdditionalLocations = [];
+                                var additionalLocation;
+                                <ui:repeat var = "l" value = "#{claimPageBean.claim.locationsArray}" varStatus = "r">
+                                    additionalLocation = wkt.read("#{l.mappedLocation}");
+                                    additionalLocation.geometry.transform(sourceCrs, destCrs);
+                                    additionalLocation.attributes = {id: "#{l.id}", description: "#{l.description}"};
+                                    claimAdditionalLocations[claimAdditionalLocations.length] = additionalLocation;
+                                    layerAdditionalLocations.addFeatures(claimAdditionalLocations);
+                                </ui:repeat>
+                            </c:if>
+                        </c:if>
+
+                        <c:if test = "#{not empty claimPageBean.claim.mappedGeometry}">
+                            // Add current claim layer
+                            var layerSelectedClaim = new OT.Map.Layer.VectorLayer(
+                                    OT.Map.LAYER_IDS.CURRENT_CLAIM,
+                                    "#{msg.MAP_CONTROL_CURRENT_CLAIM}", 
+                                    {
+                                        styleMap: OT.Map.Styles.styleMapClaim, 
+                                        isEditable: false
+                                    });
+                            layers.push(layerSelectedClaim);
+
+                            var currentClaimFeature = wkt.read("#{claimPageBean.claim.mappedGeometry}");
+                            currentClaimFeature.geometry.transform(sourceCrs, destCrs);
+
+                            initialZoomBounds = currentClaimFeature.geometry.getBounds();
+
+                            var statusCode = "#{claimPageBean.claim.statusCode}";
+                            <c:if test = "#{claimPageBean.claim.isReadyForReview}">
+                                statusCode = "forreview";
+                            </c:if>
+
+                            var currentClaimFeatureLabel = "";
+                            <c:if test = "#{not empty claimPageBean.claim.challengedClaimId or claimPageBean.claim.statusCode eq 'rejected' or claimPageBean.claim.statusCode eq 'withdrawn'}" >
+                                currentClaimFeatureLabel = "#{claimPageBean.claim.nr}";
+                            </c:if>
+
+                            currentClaimFeature.attributes = {label: currentClaimFeatureLabel, nr: "#{claimPageBean.claim.nr}", statusCode: statusCode, area: "#{claimPageBean.claim.claimArea}"};
+                            layerSelectedClaim.addFeatures(currentClaimFeature);
+                        </c:if>
+
+                        map.addLayers(layers);
+                        map.zoomToExtent(initialZoomBounds);
+
+                        setTimeout(function() {
+                            print();
+                        }, 2000);
+                    });
+                </script>
+            </ui:define>
+            <ui:define name="content">
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td style="width: 135px;">
+                                <h:graphicImage name="images/ot_logo.png" library="default" />
+                            </td>
+                            <td style="vertical-align: middle;padding-left: 30px;font-size: 33px;">
+                                #{claimPageBean.header}
+                            </td>
+                            <td style="text-align: right;vertical-align: bottom;font-size: 13px;">
+                                #{msg.CLAIM_PAGE_PRINT_GENERATED_ON}<br />
+                                #{dateBean.shortDateAndTime}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><br /></p>
+                <div class="headerCaption">#{msg.CLAIM_PAGE_CLAIMANT}</div>
+                <h:panelGroup rendered="#{claimPageBean.claim.claimant.person}" layout="block">
+                    <table style="width: 600px;" class="contentTable">
+                        <tbody>
+                            <tr>
+                                <td style="width: 300px;">
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_NAME}</b><br />
+                                    #{claimPageBean.claim.claimant.name} 
+                                    #{claimPageBean.claim.claimant.lastName}
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_BIRTHDAY}</b><br />
+                                    #{dateBean.getShortDate(claimPageBean.claim.claimant.birthDate)}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_ID_TYPE}</b><br />
+                                    #{claimPageBean.idTypeName}
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_ID_NUMBER}</b><br />
+                                    #{claimPageBean.claim.claimant.idNumber}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_ADDRESS}</b><br />
+                                    #{claimPageBean.claim.claimant.address}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not claimPageBean.claim.claimant.person}" layout="block">
+                    <table style="width: 600px;" class="contentTable">
+                        <tbody>
+                            <tr>
+                                <td style="width: 300px;">
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_NAME}</b><br />
+                                    #{claimPageBean.claim.claimant.name} 
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_ESTABLISHMENT_DATE}</b><br />
+                                    #{dateBean.getShortDate(claimPageBean.claim.claimant.birthDate)}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300px;">
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_ID_TYPE}</b><br />
+                                    #{claimPageBean.idTypeName}
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_REGISTRATION_NUMBER}</b><br />
+                                    #{claimPageBean.claim.claimant.idNumber}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <b>#{msg.CLAIM_PAGE_CLAIMANT_ADDRESS}</b><br />
+                                    #{claimPageBean.claim.claimant.address}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </h:panelGroup>
+
+                <p><br /></p>
+                <div class="headerCaption">#{msg.CLAIM_PAGE_OWNERS}</div>
+                <ui:repeat var="s" value="#{claimPageBean.claimShares}">
+                    <div style="font-weight: bold; border-bottom: #888 dotted 1px;margin: 10px 0 5px 5px">
+                        #{msg.CLAIM_PAGE_SHARE} 
+                        <h:outputText value="#{s.percentage}">
+                            <f:convertNumber type="number" integerOnly="true" />
+                        </h:outputText>%
+                    </div>
+                    <table style="width: 100%;" class="contentTable">
+                        <tbody>
+                            <ui:repeat var="o" value="#{claimPageBean.getOwners(s.owners)}">
+                                <c:if test="#{o.person}">
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_NAME}</b><br />
+                                            #{o.name} #{o.lastName}
+                                        </td>
+                                        <td>
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_BIRTHDAY}</b><br />
+                                            #{dateBean.getShortDate(o.birthDate)}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_ID_TYPE}</b><br />
+                                            #{claimPageBean.getIdTypeName(o.idTypeCode)}
+                                        </td>
+                                        <td>
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_ID_NUMBER}</b><br />
+                                            #{o.idNumber}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_ADDRESS}</b><br />
+                                            #{o.address}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div style="border-bottom: #888 dotted 1px;height: 1px;"></div>
+                                        </td>
+                                    </tr>
+                                </c:if>
+                                <c:if test="#{not o.person}">
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_NAME}</b><br />
+                                            #{o.name}
+                                        </td>
+                                        <td>
+                                            <b>#{msg.CLAIM_PAGE_ESTABLISHMENT_DATE}</b><br />
+                                            #{dateBean.getShortDate(o.birthDate)}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_ID_TYPE}</b><br />
+                                            #{claimPageBean.getIdTypeName(o.idTypeCode)}
+                                        </td>
+                                        <td>
+                                            <b>#{msg.CLAIM_PAGE_REGISTRATION_NUMBER}</b><br />
+                                            #{o.idNumber}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <b>#{msg.CLAIM_PAGE_CLAIMANT_ADDRESS}</b><br />
+                                            #{o.address}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div style="border-bottom: #888 dotted 1px;height: 1px;"></div>
+                                        </td>
+                                    </tr>
+                                </c:if>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                </ui:repeat>
+                <p><br /></p>
+
+                <div class="headerCaption">#{msg.CLAIM_PAGE_DOCUMENTS}</div>
+
+                <h:dataTable value="#{claimPageBean.attachments}" var="a" width="100%"
+                             id="tableAttachments" class="contentTable">
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_TYPE}</f:facet>
+                            #{claimPageBean.getDocTypeName(a.typeCode)}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_REF_NUMBER}</f:facet>
+                            #{a.referenceNr}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_DATE}</f:facet>
+                            #{dateBean.getShortDate(a.documentDate)}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_DOCUMENT_DESCRIPTION}</f:facet>
+                            #{a.description}
+                    </h:column>
+                </h:dataTable>
+
+                <p><br /></p>
+
+                <div class="headerCaption">#{msg.CLAIM_PAGE_ADDITIONAL_INFORMATION}</div>
+                <div style="padding:10px 0 0 5px;font-style: italic;">
+                    #{claimPageBean.claim.notes}
+                </div>
+                <br />
+                <div class="headerCaption">#{msg.CLAIM_PAGE_PARCEL}</div>
+                <div style="padding: 5px 0 0 3px;">
+                    <table style="width: 100%;" class="contentTable">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>#{msg.MAP_CONTROL_AREA}</b><br />
+                                    #{claimPageBean.claim.claimArea} m<sup>2</sup>
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_RIGHT_TYPE}</b><br />
+                                    #{claimPageBean.claimType}
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_LAND_USE}</b><br />
+                                    #{claimPageBean.landUseName}
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_START_DATE}</b><br />
+                                    #{dateBean.getShortDate(claimPageBean.claim.startDate)}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div style="border-bottom: #888 dotted 1px;height: 1px;"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="width: 100%;" class="contentTable">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_NORTH_ADJACENCY}</b><br />
+                                    #{claimPageBean.claim.northAdjacency}&nbsp;
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_SOUTH_ADJACENCY}</b><br />
+                                    #{claimPageBean.claim.southAdjacency}&nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_EAST_ADJACENCY}</b><br />
+                                    #{claimPageBean.claim.eastAdjacency}&nbsp;
+                                </td>
+                                <td>
+                                    <b>#{msg.CLAIM_PAGE_WEST_ADJACENCY}</b><br />
+                                    #{claimPageBean.claim.westAdjacency}&nbsp;
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p></p>
+                    <div style="border-bottom: #888 dotted 1px;height: 1px;"></div>
+                    <br />
+                    <div style="text-align: center;">
+                        <div id="map" style="width: 600px;height: 400px;border: #888 solid 1px;">
+                        </div>
+                    </div>
+                </div>
+                <p><br /></p>
+                <table style="width: 100%; margin-top: 40px;font-size: 14px;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                #{msg.CLAIM_PAGE_SIGNATURE} ______________________
+                            </td>
+                            <td style="text-align: right;">
+                                #{msg.CLAIM_PAGE_DATE} ______________________
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

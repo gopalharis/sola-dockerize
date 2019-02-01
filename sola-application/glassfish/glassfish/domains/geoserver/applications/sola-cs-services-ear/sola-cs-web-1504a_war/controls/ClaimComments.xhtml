@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition>
+            <h:link class="BlueLink" rendered="#{claimPageBean.canEdit and allowEdit}"
+                    onclick="return showCommentDialog('')">
+                <i class="glyphicon glyphicon-plus"></i> #{msg.CLAIM_PAGE_ADD_COMMENT}
+            </h:link>
+            <h:panelGroup id="pnlComments">
+                <h:dataTable value="#{claimPageBean.comments}" var="c"
+                             id="tableComments"
+                             class="table"
+                             headerClass="table-header">
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_COMMENT}</f:facet>
+                        <div style="width: 450px;">
+                            <h:commandLink rendered="#{claimPageBean.canEditComment(c.id) and allowEdit}"
+                                           style="padding-right: 5px;"
+                                           title="#{msg.GENERAL_LABEL_DELETE}"
+                                           onclick="return confirm('#{msg.CLAIM_PAGE_CONFIRM_DELETE_COMMENT}')">
+                                <f:ajax listener="#{claimPageBean.deleteComment(c.id)}" 
+                                        event="click" onevent="onDeleteComment" onerror="handleAjaxError"
+                                        render=":mainForm:pnlComments" />
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </h:commandLink>
+                            <h:link class="BlueLink" rendered="#{claimPageBean.canEditComment(c.id) and allowEdit}"
+                                    title="#{msg.GENERAL_LABEL_EDIT}"
+                                    onclick="return showCommentDialog('#{c.id}')"><i class="glyphicon glyphicon-pencil" style="padding-right: 7px;"></i>
+                            </h:link>
+                            <span id="comment#{c.id}">#{c.comment}</span>
+                        </div>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_COMMENT_USER}</f:facet>
+                            #{claimPageBean.getFullUserName(c.commentUser)}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{msg.CLAIM_PAGE_COMMENT_TIME}</f:facet>
+                            #{dateBean.formatDate(c.creationTime)}
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{claimPageBean.canEdit and allowEdit}">
+                <div class="modal fade" id="commentDialog" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">#{msg.GENERAL_LABEL_CLOSE}</span></button>
+                                <h4 class="modal-title" id="myModalLabel">#{msg.CLAIM_PAGE_COMMENT_TEXT}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h:inputTextarea id="txtComment" style="height: 230px;width: 100%;" value="#{claimPageBean.commentText}">
+                                </h:inputTextarea>
+                                <h:inputHidden id="hCommentId" value="#{claimPageBean.commentId}" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">#{msg.GENERAL_LABEL_CLOSE}</button>
+                                <h:commandButton class="btn btn-primary" value="#{msg.GENERAL_LABEL_SAVE}">
+                                    <f:ajax event="click" execute="txtComment hCommentId" 
+                                            render=":mainForm:pnlComments"
+                                            onevent="onSaveComment"
+                                            onerror="handleAjaxError"
+                                            listener="#{claimPageBean.saveComment}" />
+                                </h:commandButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script language="javascript">
+                    function showCommentDialog(commentId) {
+                        if (commentId !== '') {
+                            $("#mainForm\\:txtComment").val($("#comment" + commentId).text());
+                        } else {
+                            $("#mainForm\\:txtComment").val('');
+                        }
+                        $("#mainForm\\:hCommentId").val(commentId);
+                        $('#commentDialog').modal('show');
+                        return false;
+                    }
+
+                    function animateComments() {
+                        $('#mainForm\\:tableComments').hide();
+                        $('#mainForm\\:tableComments').fadeIn('slow');
+                    }
+
+                    function onDeleteComment(data) {
+                        handleAjax(data);
+                        var status = data.status;
+                        switch (status) {
+                            case "success":
+                                animateComments();
+                                break;
+                        }
+                    }
+
+                    function onSaveComment(data) {
+                        handleAjax(data);
+                        var status = data.status;
+                        switch (status) {
+                            case "success":
+                                $('#commentDialog').modal('hide');
+                                animateComments();
+                                break;
+                        }
+                    }
+                </script>
+            </h:panelGroup>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<layer>
+  <name>claims</name>
+  <id>LayerInfoImpl-1c50520d:14d7998f574:-7fec</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-1c50520d:14d7998f574:-7ff2</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-1c50520d:14d7998f574:-7fed</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

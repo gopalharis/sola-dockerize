@@ -1,0 +1,22 @@
+/* AUTOMATICALLY GENERATED ON Thu Apr 02 15:45:44 NZDT 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.WebResourcePermission "/";
+  permission javax.security.jacc.WebUserDataPermission "/";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.WebRoleRefPermission "jsp", "**";
+  permission javax.security.jacc.WebRoleRefPermission "", "**";
+  permission javax.security.jacc.WebRoleRefPermission "RegistrationRequesterPortTypeImpl", "**";
+  permission javax.security.jacc.WebRoleRefPermission "ParticipantPortTypeImpl11", "**";
+  permission javax.security.jacc.WebRoleRefPermission "CoordinatorPortTypeImpl", "**";
+  permission javax.security.jacc.WebRoleRefPermission "RegistrationPortTypeImpl", "**";
+  permission javax.security.jacc.WebRoleRefPermission "CoordinatorPortTypeImpl11", "**";
+  permission javax.security.jacc.WebRoleRefPermission "ParticipantPortTypeImpl", "**";
+  permission javax.security.jacc.WebRoleRefPermission "RegistrationRequesterPortTypeImpl11", "**";
+  permission javax.security.jacc.WebRoleRefPermission "RegistrationPortTypeImpl11", "**";
+  permission javax.security.jacc.WebRoleRefPermission "default", "**";
+};
+

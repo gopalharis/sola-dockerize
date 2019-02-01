@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sola.services</groupId>
+        <artifactId>sola-boundary</artifactId>
+        <version>1503a</version>
+    </parent>
+    <groupId>org.sola.services.boundary</groupId>
+    <artifactId>sola-web-services</artifactId>
+    <packaging>war</packaging>
+    <version>1503a</version>
+    <name>Boundary Web Services</name>
+    <repositories>
+        <repository>
+            <id>java.net2</id>
+            <name>Repository hosting the jee6 artifacts</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+        <repository>
+            <url>http://download.java.net/maven/2/</url>
+            <id>metro</id>
+            <layout>default</layout>
+            <name>Repository for library Library[metro]</name>
+        </repository>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Maven Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.java.net</id>
+            <name>Java.net Maven2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Maven Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <dependencies>
+        <dependency>
+            <!-- Glassfish 3.1.2 includes Metro 2.2 so set dependency as provided-->
+            <groupId>org.glassfish.metro</groupId>
+            <artifactId>webservices-rt</artifactId>
+            <version>2.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-application</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-transfer-objects</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-cadastre</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-transaction</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-search</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-administrative</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-digital-archive</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services</groupId>
+            <artifactId>sola-services-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sola.services.ejbs</groupId>
+            <artifactId>sola-admin</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+      <resources>
+           <!-- Only filter the WSIT XML files. This will ensure the binary jks
+           file is not corrupted by the filtering process. -->
+           <resource>
+               <!-- Sets filtering to true on the WSIT XML files -->
+               <directory>src/main/java/META-INF</directory>
+               <filtering>true</filtering>
+               <includes>
+                   <include>**/*.xml</include>
+               </includes>
+           </resource>
+            <resource>
+                <!-- Sets filtering to false on all other files -->
+                <directory>src/main/java/META-INF</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin> 
+               <!-- This plugin generates the wsdl artifacts for the web services. Maven genenates
+               a classpath for the wsgen utility based on the compile dependencies in the WAR,
+               hence it is necessary to ensure all WAR dependences have a scope of compile rather 
+               than provided. This also requires additional configuration of the 
+               maven-war-plugin to ensure the WAR is packaged correctly. --> 
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <resourceDestDir>${basedir}/../wsdl</resourceDestDir>
+                    <genWsdl>true</genWsdl>
+                    <keep>true</keep>
+                    <verbose>true</verbose>
+                </configuration>
+                <executions>     
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-cadastre-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.Cadastre</sei>  
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-casemanagement-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.CaseManagement</sei>
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-admin-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.Admin</sei>   
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-search-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.Search</sei>           
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-referencedata-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.ReferenceData</sei>            
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-digitalarchive-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.DigitalArchive</sei>            
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-spatial-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.Spatial</sei>            
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-administrative-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.Administrative</sei>  
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-filestreaming-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.FileStreaming</sei>  
+                        </configuration>      
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <id>wsgen-generate-bulkoperations-wsdl</id>
+                        <configuration>
+                            <sei>org.sola.services.boundary.ws.BulkOperations</sei>  
+                        </configuration>      
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArguments>
+                        <endorseddirs>${project.build.directory}/endorsed</endorseddirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- Need to add endorsed jars for JAX-WS 2.2 when running Java 1.6-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/endorsed</outputDirectory>
+                            <silent>true</silent>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax.xml.bind</groupId>
+                                    <artifactId>jaxb-api</artifactId>
+                                    <version>2.2.4</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>javax.xml.ws</groupId>
+                                    <artifactId>jaxws-api</artifactId>
+                                    <version>2.2.8</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir}/src/main/java/META-INF</directory>
+                            <targetPath>WEB-INF/classes/META-INF</targetPath>
+                        </resource>
+                    </webResources>
+                    <!--
+                    To correctly generate the WSDL artifacts for the services using the
+                    jaxws-maven-plugin (wsgen) above it is necessary to have all dependencies of 
+                    the WAR set as compile dependencies. This causes a deployment problem when 
+                    the WAR is packaged as part of the SOLA Services EAR as some EJB's are 
+                    referenced multiple times. To avoid this deployment issue and allow wsgen 
+                    to work correctly, the following configuration settings ensure the WAR is only
+                    packaged with those dependencies and config files that cannot be obtained from
+                    the EAR lib directory. Note that all jars referenced by the EJB projects are
+                    placed in the EAR lib directory and will be available to the WAR on its 
+                    manifest classpath. For more details on the configuration below, refer to 
+                    "Creating Skinny WARs" on the internet.  
+                    
+                    Note that if additional files are added to the WAR, it may be necessary to 
+                    update the list of files/jar's included in the packaging of the WAR. -->    
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>    
+                        </manifest>    
+                    </archive>
+                    <packagingIncludes>**/*.xml,WEB-INF/classes/**
+                    </packagingIncludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <glassfishDirectory>C:\\glassfish3\\glassfish</glassfishDirectory>
+                    <user>admin</user>
+                    <passwordFile>
+                        C:\\glassfish3\\glassfish\\domains\\domain1\\config\\domain-passwords
+                    </passwordFile>
+                    <domain>
+                        <name>domain1</name>
+                        <adminPort>4848</adminPort>
+                        <httpPort>8080</httpPort>
+                        <httpsPort>8181</httpsPort>
+                    </domain>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+    <profiles>
+        <profile>
+            <id>endorsed</id>
+            <activation>
+                <property>
+                    <name>sun.boot.class.path</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>2.0.2</version>
+                        <configuration>
+                            <!-- javaee6 contains upgrades of APIs contained within the JDK itself.
+                            As such these need to be placed on the bootclasspath, rather than classpath of the
+                            compiler.
+                            If you don't make use of these new updated API, you can delete the profile.
+                            On non-SUN jdk, you will need to create a similar profile for your jdk, with the similar property as sun.boot.class.path in Sun's JDK.-->
+                            <compilerArguments>
+                                <bootclasspath>${settings.localRepository}/javax/javaee-endorsed-api/6.0/javaee-endorsed-api-6.0.jar${path.separator}${sun.boot.class.path}</bootclasspath>
+                            </compilerArguments>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>javax</groupId>
+                                <artifactId>javaee-endorsed-api</artifactId>
+                                <version>6.0</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <!-- This profile overrides the WAR packaging and builds a full WAR file with all 
+            dependencies. This must be used if the WAR is to be deployed into the container without
+            being part of an EAR. -->
+            <id>full-war</id>
+            <build>
+                <plugins>  
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <configuration> 
+                            <archive>
+                                <manifest>
+                                    <addClasspath>false</addClasspath>    
+                                </manifest>    
+                            </archive>
+                            <packagingIncludes>WEB-INF/lib/*.jar, **/*.xml,WEB-INF/classes/**
+                            </packagingIncludes>
+                        </configuration>
+                    </plugin>
+                  
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <properties>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <wsit.keystore.storepass>changeit</wsit.keystore.storepass>
+        <wsit.keystore.peeralias>xws-security-server</wsit.keystore.peeralias>
+        <wsit.keystore.location>keystore.jks</wsit.keystore.location>
+    </properties>
+</project>

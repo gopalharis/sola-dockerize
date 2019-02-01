@@ -1,0 +1,56 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-1c50520d:14d7998f574:-7fed</id>
+  <name>claims</name>
+  <nativeName>claims</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-1c50520d:14d7998f574:-7ff3</id>
+  </namespace>
+  <title>Claims</title>
+  <keywords>
+    <string>claims</string>
+    <string>features</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>175.080642521082</minx>
+    <maxx>175.087208568752</maxx>
+    <miny>-36.8340342492692</miny>
+    <maxy>-36.7880021592187</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>175.080642521082</minx>
+    <maxx>175.087208568752</maxx>
+    <miny>-36.8340342492692</miny>
+    <maxy>-36.7880021592187</maxy>
+    <crs>GEOGCS[&quot;WGS84(DD)&quot;, &#xd;
+  DATUM[&quot;WGS84&quot;, &#xd;
+    SPHEROID[&quot;WGS84&quot;, 6378137.0, 298.257223563]], &#xd;
+  PRIMEM[&quot;Greenwich&quot;, 0.0], &#xd;
+  UNIT[&quot;degree&quot;, 0.017453292519943295], &#xd;
+  AXIS[&quot;Geodetic longitude&quot;, EAST], &#xd;
+  AXIS[&quot;Geodetic latitude&quot;, NORTH]]</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="cachingEnabled">false</entry>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>claims</name>
+        <sql>select id, nr, (challenge_expiry_date &lt; now()) as expired, mapped_geometry, status_code &#xd;
+from opentenure.claim&#xd;
+where status_code in (&apos;unmoderated&apos;,&apos;moderated&apos;,&apos;reviewed&apos;) and challenged_claim_id is null
+</sql>
+        <escapeSql>false</escapeSql>
+      </virtualTable>
+    </entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-1c50520d:14d7998f574:-7ff1</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

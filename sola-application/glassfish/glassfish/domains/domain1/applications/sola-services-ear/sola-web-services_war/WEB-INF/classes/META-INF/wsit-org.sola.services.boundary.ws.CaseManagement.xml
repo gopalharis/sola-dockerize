@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="casemanagement-service" targetNamespace="http%3A%2F%2Fwebservices.sola.org%2Fcasemanagement" xmlns:tns="http%3A%2F%2Fwebservices.sola.org%2Fcasemanagement" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1="http://www.w3.org/ns/ws-policy" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsaw="http://www.w3.org/2005/08/addressing" xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" 
+ >
+    <message name="CheckConnection"/>
+    <message name="CheckConnectionResponse"/>
+    <message name="CreateApplication"/>
+    <message name="CreateApplicationResponse"/>
+    <message name="SOLAFault"/>
+    <message name="UnhandledFault"/>
+    <message name="SOLAAccessFault"/>
+    <message name="OptimisticLockingFault"/>
+    <message name="SOLAValidationFault"/>
+    <message name="SaveApplication"/>
+    <message name="SaveApplicationResponse"/>
+    <message name="saveSource"/>
+    <message name="saveSourceResponse"/>
+    <message name="SaveParty"/>
+    <message name="SavePartyResponse"/>
+    <message name="GetAddress"/>
+    <message name="GetAddressResponse"/>
+    <message name="GetApplication"/>
+    <message name="GetApplicationResponse"/>
+    <message name="GetParty"/>
+    <message name="GetPartyResponse"/>
+    <message name="GetAgents"/>
+    <message name="GetAgentsResponse"/>
+    <message name="GetUserActions"/>
+    <message name="GetUserActionsResponse"/>
+    <message name="CalculateFee"/>
+    <message name="CalculateFeeResponse"/>
+    <message name="AttachSourceToTransaction"/>
+    <message name="AttachSourceToTransactionResponse"/>
+    <message name="attachPowerOfAttorneyToTransaction"/>
+    <message name="attachPowerOfAttorneyToTransactionResponse"/>
+    <message name="DettachSourceFromTransaction"/>
+    <message name="DettachSourceFromTransactionResponse"/>
+    <message name="GetSourcesByServiceId"/>
+    <message name="GetSourcesByServiceIdResponse"/>
+    <message name="getPowerOfAttorneyByServiceId"/>
+    <message name="getPowerOfAttorneyByServiceIdResponse"/>
+    <message name="GetSourcesByIds"/>
+    <message name="GetSourcesByIdsResponse"/>
+    <message name="getSourceById"/>
+    <message name="getSourceByIdResponse"/>
+    <message name="getPowerOfAttorneyById"/>
+    <message name="getPowerOfAttorneyByIdResponse"/>
+    <message name="getApplicationByTransactionId"/>
+    <message name="getApplicationByTransactionIdResponse"/>
+    <message name="ServiceActionComplete"/>
+    <message name="ServiceActionCompleteResponse"/>
+    <message name="ServiceActionCancel"/>
+    <message name="ServiceActionCancelResponse"/>
+    <message name="ServiceActionRevert"/>
+    <message name="ServiceActionRevertResponse"/>
+    <message name="ServiceActionStart"/>
+    <message name="ServiceActionStartResponse"/>
+    <message name="ApplicationActionWithdraw"/>
+    <message name="ApplicationActionWithdrawResponse"/>
+    <message name="ApplicationActionCancel"/>
+    <message name="ApplicationActionCancelResponse"/>
+    <message name="ApplicationActionRequisition"/>
+    <message name="ApplicationActionRequisitionResponse"/>
+    <message name="ApplicationActionValidate"/>
+    <message name="ApplicationActionValidateResponse"/>
+    <message name="ApplicationActionApprove"/>
+    <message name="ApplicationActionApproveResponse"/>
+    <message name="ApplicationActionArchive"/>
+    <message name="ApplicationActionArchiveResponse"/>
+    <message name="ApplicationActionDespatch"/>
+    <message name="ApplicationActionDespatchResponse"/>
+    <message name="ApplicationActionLapse"/>
+    <message name="ApplicationActionLapseResponse"/>
+    <message name="ApplicationActionUnassign"/>
+    <message name="ApplicationActionUnassignResponse"/>
+    <message name="ApplicationActionAssign"/>
+    <message name="ApplicationActionAssignResponse"/>
+    <message name="ApplicationActionResubmit"/>
+    <message name="ApplicationActionResubmitResponse"/>
+    <message name="GetAllBrs"/>
+    <message name="GetAllBrsResponse"/>
+    <message name="SaveInformationService"/>
+    <message name="SaveInformationServiceResponse"/>
+    <message name="GetSysRegCertificatesByLocation"/>
+    <message name="GetSysRegCertificatesByLocationResponse"/>
+    <message name="GetSysRegCertificatesByApplication"/>
+    <message name="GetSysRegCertificatesByApplicationResponse"/>
+    <message name="GetWorkSummary"/>
+    <message name="GetWorkSummaryResponse"/>
+    <portType name="CaseManagement">
+        <operation name="CheckConnection">
+            <input message="tns:CheckConnection"/>
+            <output message="tns:CheckConnectionResponse"/>
+        </operation>
+        <operation name="CreateApplication">
+            <input message="tns:CreateApplication"/>
+            <output message="tns:CreateApplicationResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="SaveApplication">
+            <input message="tns:SaveApplication"/>
+            <output message="tns:SaveApplicationResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="saveSource">
+            <input message="tns:saveSource"/>
+            <output message="tns:saveSourceResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="SaveParty">
+            <input message="tns:SaveParty"/>
+            <output message="tns:SavePartyResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="GetAddress">
+            <input message="tns:GetAddress"/>
+            <output message="tns:GetAddressResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetApplication">
+            <input message="tns:GetApplication"/>
+            <output message="tns:GetApplicationResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetParty">
+            <input message="tns:GetParty"/>
+            <output message="tns:GetPartyResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetAgents">
+            <input message="tns:GetAgents"/>
+            <output message="tns:GetAgentsResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetUserActions">
+            <input message="tns:GetUserActions"/>
+            <output message="tns:GetUserActionsResponse"/>
+        </operation>
+        <operation name="CalculateFee">
+            <input message="tns:CalculateFee"/>
+            <output message="tns:CalculateFeeResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="AttachSourceToTransaction">
+            <input message="tns:AttachSourceToTransaction"/>
+            <output message="tns:AttachSourceToTransactionResponse"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="attachPowerOfAttorneyToTransaction">
+            <input message="tns:attachPowerOfAttorneyToTransaction"/>
+            <output message="tns:attachPowerOfAttorneyToTransactionResponse"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="DettachSourceFromTransaction">
+            <input message="tns:DettachSourceFromTransaction"/>
+            <output message="tns:DettachSourceFromTransactionResponse"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourcesByServiceId">
+            <input message="tns:GetSourcesByServiceId"/>
+            <output message="tns:GetSourcesByServiceIdResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="getPowerOfAttorneyByServiceId">
+            <input message="tns:getPowerOfAttorneyByServiceId"/>
+            <output message="tns:getPowerOfAttorneyByServiceIdResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourcesByIds">
+            <input message="tns:GetSourcesByIds"/>
+            <output message="tns:GetSourcesByIdsResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="getSourceById">
+            <input message="tns:getSourceById"/>
+            <output message="tns:getSourceByIdResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="getPowerOfAttorneyById">
+            <input message="tns:getPowerOfAttorneyById"/>
+            <output message="tns:getPowerOfAttorneyByIdResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="getApplicationByTransactionId">
+            <input message="tns:getApplicationByTransactionId"/>
+            <output message="tns:getApplicationByTransactionIdResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="ServiceActionComplete">
+            <input message="tns:ServiceActionComplete"/>
+            <output message="tns:ServiceActionCompleteResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ServiceActionCancel">
+            <input message="tns:ServiceActionCancel"/>
+            <output message="tns:ServiceActionCancelResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ServiceActionRevert">
+            <input message="tns:ServiceActionRevert"/>
+            <output message="tns:ServiceActionRevertResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ServiceActionStart">
+            <input message="tns:ServiceActionStart"/>
+            <output message="tns:ServiceActionStartResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionWithdraw">
+            <input message="tns:ApplicationActionWithdraw"/>
+            <output message="tns:ApplicationActionWithdrawResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionCancel">
+            <input message="tns:ApplicationActionCancel"/>
+            <output message="tns:ApplicationActionCancelResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionRequisition">
+            <input message="tns:ApplicationActionRequisition"/>
+            <output message="tns:ApplicationActionRequisitionResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionValidate">
+            <input message="tns:ApplicationActionValidate"/>
+            <output message="tns:ApplicationActionValidateResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionApprove">
+            <input message="tns:ApplicationActionApprove"/>
+            <output message="tns:ApplicationActionApproveResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionArchive">
+            <input message="tns:ApplicationActionArchive"/>
+            <output message="tns:ApplicationActionArchiveResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionDespatch">
+            <input message="tns:ApplicationActionDespatch"/>
+            <output message="tns:ApplicationActionDespatchResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionLapse">
+            <input message="tns:ApplicationActionLapse"/>
+            <output message="tns:ApplicationActionLapseResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionUnassign">
+            <input message="tns:ApplicationActionUnassign"/>
+            <output message="tns:ApplicationActionUnassignResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionAssign">
+            <input message="tns:ApplicationActionAssign"/>
+            <output message="tns:ApplicationActionAssignResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionResubmit">
+            <input message="tns:ApplicationActionResubmit"/>
+            <output message="tns:ApplicationActionResubmitResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="GetAllBrs">
+            <input message="tns:GetAllBrs"/>
+            <output message="tns:GetAllBrsResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="SaveInformationService">
+            <input message="tns:SaveInformationService"/>
+            <output message="tns:SaveInformationServiceResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault" message="tns:SOLAValidationFault"/>
+        </operation>
+        <operation name="GetSysRegCertificatesByLocation">
+            <input message="tns:GetSysRegCertificatesByLocation"/>
+            <output message="tns:GetSysRegCertificatesByLocationResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSysRegCertificatesByApplication">
+            <input message="tns:GetSysRegCertificatesByApplication"/>
+            <output message="tns:GetSysRegCertificatesByApplicationResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetWorkSummary">
+            <input message="tns:GetWorkSummary"/>
+            <output message="tns:GetWorkSummaryResponse"/>
+        </operation>
+    </portType>
+    <binding name="CaseManagementPortBinding" type="tns:CaseManagement">
+        <wsp:PolicyReference URI="#CaseManagementPortBindingPolicy"/>
+        <operation name="CheckConnection">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="CreateApplication">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="SaveApplication">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="saveSource">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="SaveParty">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="GetAddress">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetApplication">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetParty">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetAgents">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetUserActions">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="CalculateFee">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="AttachSourceToTransaction">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAValidationFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="attachPowerOfAttorneyToTransaction">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAValidationFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="DettachSourceFromTransaction">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAValidationFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourcesByServiceId">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="getPowerOfAttorneyByServiceId">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourcesByIds">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="getSourceById">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="getPowerOfAttorneyById">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="getApplicationByTransactionId">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="ServiceActionComplete">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ServiceActionCancel">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ServiceActionRevert">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ServiceActionStart">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionWithdraw">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionCancel">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionRequisition">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionValidate">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionApprove">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionArchive">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionDespatch">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionLapse">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionUnassign">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionAssign">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="ApplicationActionResubmit">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="GetAllBrs">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="SaveInformationService">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+            <fault name="SOLAValidationFault"/>
+        </operation>
+        <operation name="GetSysRegCertificatesByLocation">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSysRegCertificatesByApplication">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetWorkSummary">
+            <input>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#CaseManagementPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="casemanagement-service">
+        <port name="CaseManagementPort" binding="tns:CaseManagementPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="CaseManagementPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="false"/>
+                <sp:SymmetricBinding>
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                                    <wsp:Policy>
+                                        <sp:WssX509V3Token10/>
+                                        <sp:RequireIssuerSerialReference/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:Wss11>
+                    <wsp:Policy>
+                        <sp:MustSupportRefIssuerSerial/>
+                        <sp:MustSupportRefThumbprint/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+                <sp:SignedSupportingTokens>
+                    <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+               <sc:KeyStore wspp:visibility="private" location="${wsit.keystore.location}" type="JKS" storepass="${wsit.keystore.storepass}" alias="${wsit.keystore.peeralias}"/>
+             </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="CaseManagementPortBinding_CheckConnection_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="CaseManagementPortBinding_CheckConnection_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

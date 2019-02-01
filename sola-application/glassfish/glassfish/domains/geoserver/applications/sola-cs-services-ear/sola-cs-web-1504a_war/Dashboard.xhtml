@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:uc="http://xmlns.jcp.org/jsf/composite/uc"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.DASHBOARD_PAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <script type="text/javascript">
+                    $(function() {
+                        bindDateFields('#{dateBean.datePattern.toLowerCase()}');
+                    });
+                </script>
+
+                <div class="PageName">
+                    <i class="glyphicon glyphicon-th-large"></i> #{msg.DASHBOARD_PAGE_TITLE}
+                </div>
+                <div class="content" style="min-width: 900px;">
+                    <div class="nav-tab-div">
+                        <ul class="nav nav-tabs">
+                            <c:if test="#{activeUserBean.canRecordClaim}">
+                                <li class="active"><a href="#myClaims" data-toggle="tab">#{msg.DASHBOARD_PAGE_MY_CLAIMS}</a></li>
+                            </c:if>
+                            <c:if test="#{activeUserBean.canReviewClaim or activeUserBean.canModerateClaim}">
+                                <li><a href="#assignedClaims" data-toggle="tab">#{msg.DASHBOARD_PAGE_ASSIGNED_CLAIMS}</a></li>
+                            </c:if>
+                            <c:if test="#{activeUserBean.canReviewClaim}">
+                                <li><a href="#claimsForReview" data-toggle="tab">#{msg.DASHBOARD_PAGE_CLAIMS_FOR_REVIEW}</a></li>
+                            </c:if>
+                            <c:if test="#{activeUserBean.canModerateClaim}">
+                                <li><a href="#claimsForModeration" data-toggle="tab">#{msg.DASHBOARD_PAGE_CLAIMS_FOR_MODERATION}</a></li>
+                            </c:if>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    
+                    <div class="tab-content">
+                        <h:panelGroup rendered="#{activeUserBean.canRecordClaim}">
+                            <div class="tab-pane active" id="myClaims">
+                                <div style="padding: 15px 0px;min-width: 900px;">
+                                    <uc:ClaimSearch id="ctrlClaimSearch" searchByUser="true" />
+                                </div>
+                            </div>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{activeUserBean.canReviewClaim or activeUserBean.canModerateClaim}">
+                            <div class="tab-pane" id="assignedClaims">
+                                <div style="padding: 15px 0px;min-width: 900px;">
+                                    <uc:ClaimsTable claims="#{dashboardBean.searchAssigned()}" id="ctrlAssignedClaims" />
+                                </div>
+                            </div>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{activeUserBean.canReviewClaim}">
+                            <div class="tab-pane" id="claimsForReview">
+                                <div style="padding: 15px 0px;min-width: 900px;">
+                                    <h:selectBooleanCheckbox value="#{dashboardBean.showAllForReview}" id="chbxShowAllForReview">
+                                        <f:ajax execute=":mainForm:chbxShowAllForReview" 
+                                                event="click"
+                                                onevent="handleAjax"
+                                                render=":mainForm:pnlClaimsForReview"
+                                                listener="#{dashboardBean.searchForReview()}" />
+                                        #{msg.DASHBOARD_PAGE_SHOW_ASSIGNED} 
+                                    </h:selectBooleanCheckbox>
+                                    <div class="LineSpace"></div>
+                                    <h:panelGroup id="pnlClaimsForReview">
+                                        <uc:ClaimsTable claims="#{dashboardBean.searchForReview()}" id="ctrlClaimsForReview" />
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{activeUserBean.canModerateClaim}">
+                            <div class="tab-pane" id="claimsForModeration">
+                                <div style="padding: 15px 0px;min-width: 900px;">
+                                    <h:selectBooleanCheckbox id="chbxShowAllForModeration" value="#{dashboardBean.showAllForModeration}"> 
+                                        <f:ajax execute=":mainForm:chbxShowAllForModeration" 
+                                                event="click"
+                                                onevent="handleAjax"
+                                                render=":mainForm:pnlClaimsForModeration"
+                                                listener="#{dashboardBean.searchForModeration()}" />
+                                        #{msg.DASHBOARD_PAGE_SHOW_ASSIGNED} 
+                                    </h:selectBooleanCheckbox>
+                                    <div class="LineSpace"></div>
+                                    <h:panelGroup id="pnlClaimsForModeration">
+                                        <uc:ClaimsTable claims="#{dashboardBean.searchForModeration()}" id="ctrlClaimsForModeration" />
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                        </h:panelGroup>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

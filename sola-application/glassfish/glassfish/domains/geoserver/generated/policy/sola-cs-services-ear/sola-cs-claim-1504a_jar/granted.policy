@@ -1,0 +1,297 @@
+/* AUTOMATICALLY GENERATED ON Fri Sep 18 16:42:01 NZST 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canAssignClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getFieldValueTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canChallengeClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getRejectionReasons,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canRevertClaimReview,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getMaxFileSize,Local,";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getFieldConstraintTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getClaimStatuses,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canApproveClaimReview,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canEditClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getCodeEntityList,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "setDbConnectionManager,Local,org.sola.services.common.repository.DatabaseConnectionManager";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canSubmitClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "isInRole,Local,java.lang.String[]";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canAddDocumentsToClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getLandUses,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getDefaultFormTemplate,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getFormTemplate,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getFieldTypes,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getCodeEntityList,Local,java.lang.Class";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canWithdrawClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getUploadLimit,Local,";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canUnAssignClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canApproveClaimModeration,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getCodeEntity,Local,java.lang.Class,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachment,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getClaimStatus,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveEntity,Local,org.sola.services.common.repository.entities.AbstractEntity";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getFormTemplates,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canRejectClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "canDeleteClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getUserName,Local,";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewAssign" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "DashbrdViewAssign";
+};
+
+grant      principal org.glassfish.security.common.Group "02SEC_Restricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "02SEC_Restricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangeSecClass" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ChangeSecClass";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSettings" {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveFormTemplate,Local,org.sola.opentenure.services.ejbs.claim.entities.FormTemplate";
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ManageSettings";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnAssignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "BaunitSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnView" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnView";
+};
+
+grant      principal org.glassfish.security.common.Group "StartService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "StartService";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ViewMap";
+};
+
+grant      principal org.glassfish.security.common.Group "AccessCS" {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "checkFormTemplateHasPayload,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getChallengingClaimsByChallengedId,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getClaimPermissions,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getClaimByNumber,Local,java.lang.String";
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "AccessCS";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitCertificate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "BaunitCertificate";
+};
+
+grant      principal org.glassfish.security.common.Group "PartySave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "PartySave";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnDispatch" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnDispatch";
+};
+
+grant      principal org.glassfish.security.common.Group "RecordClaim" {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachmentChunk,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentChunk";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachmentLastChunk,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveClaim,Local,org.sola.opentenure.services.ejbs.claim.entities.Claim,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteClaimChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "withdrawClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteAttachmentChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachment,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentBinary";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachmentFromChunks,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentBinary";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "addClaimAttachment,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "submitClaim,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachmentChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "RecordClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ViewReports" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ViewReports";
+};
+
+grant      principal org.glassfish.security.common.Group "10SEC_SuppressOrd" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "10SEC_SuppressOrd";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnResubmit" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnResubmit";
+};
+
+grant      principal org.glassfish.security.common.Group "systematicRegn" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "systematicRegn";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageSecurity" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ManageSecurity";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnUnassignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourcePrint" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "SourcePrint";
+};
+
+grant      principal org.glassfish.security.common.Group "ModerateClaim" {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "rejectClaim,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachmentChunk,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentChunk";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "revertClaimReview,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteClaimChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "assignClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "approveClaimModeration,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachmentLastChunk,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveClaim,Local,org.sola.opentenure.services.ejbs.claim.entities.Claim,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteAttachmentChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachment,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentBinary";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "unAssignClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachmentFromChunks,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentBinary";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachmentChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ModerateClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ChangePassword" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ChangePassword";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "**";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnUnassignOthers" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnUnassignOthers";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnCreate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnCreate";
+};
+
+grant      principal org.glassfish.security.common.Group "01SEC_Unrestricted" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "01SEC_Unrestricted";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnAssignSelf" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnAssignSelf";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "SourceSave";
+};
+
+grant      principal org.glassfish.security.common.Group "ReviewClaim" {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "rejectClaim,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachmentChunk,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentChunk";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteClaimChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "assignClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachmentLastChunk,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveClaim,Local,org.sola.opentenure.services.ejbs.claim.entities.Claim,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "deleteAttachmentChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachment,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentBinary";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "unAssignClaim,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveAttachmentFromChunks,Local,org.sola.opentenure.services.ejbs.claim.entities.AttachmentBinary";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "approveClaimReview,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "getAttachmentChunks,Local,java.lang.String";
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ReviewClaim";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnWithdraw" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnWithdraw";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnApprove" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnApprove";
+};
+
+grant      principal org.glassfish.security.common.Group "SourceSearch" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "SourceSearch";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnStatus" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnStatus";
+};
+
+grant      principal org.glassfish.security.common.Group "03SEC_Confidential" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "03SEC_Confidential";
+};
+
+grant      principal org.glassfish.security.common.Group "RHSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "RHSave";
+};
+
+grant      principal org.glassfish.security.common.Group "PrintMap" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "PrintMap";
+};
+
+grant      principal org.glassfish.security.common.Group "TransactionCommit" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "TransactionCommit";
+};
+
+grant      principal org.glassfish.security.common.Group "DashbrdViewUnassign" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "DashbrdViewUnassign";
+};
+
+grant      principal org.glassfish.security.common.Group "RevertService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "RevertService";
+};
+
+grant      principal org.glassfish.security.common.Group "04SEC_Secret" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "04SEC_Secret";
+};
+
+grant      principal org.glassfish.security.common.Group "ParcelSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ParcelSave";
+};
+
+grant      principal org.glassfish.security.common.Group "BaunitSave" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "BaunitSave";
+};
+
+grant      principal org.glassfish.security.common.Group "05SEC_TopSecret" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "05SEC_TopSecret";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnValidate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnValidate";
+};
+
+grant      principal org.glassfish.security.common.Group "ManageRefdata" {
+  permission javax.security.jacc.EJBMethodPermission "ClaimEJB", "saveCodeEntity,Local,org.sola.services.common.repository.entities.AbstractCodeEntity";
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ManageRefdata";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnArchive" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnArchive";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnEdit" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnEdit";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnRequisition" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnRequisition";
+};
+
+grant      principal org.glassfish.security.common.Group "CancelService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "CancelService";
+};
+
+grant      principal org.glassfish.security.common.Group "ApplnReject" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ApplnReject";
+};
+
+grant      principal org.glassfish.security.common.Group "ReportGenerate" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "ReportGenerate";
+};
+
+grant      principal org.glassfish.security.common.Group "CompleteService" {
+  permission javax.security.jacc.EJBRoleRefPermission "ClaimEJB", "CompleteService";
+};
+

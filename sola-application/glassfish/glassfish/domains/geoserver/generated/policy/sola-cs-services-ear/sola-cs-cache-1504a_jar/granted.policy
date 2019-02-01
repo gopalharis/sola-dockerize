@@ -1,0 +1,20 @@
+/* AUTOMATICALLY GENERATED ON Fri Sep 18 16:42:01 NZST 2015*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "getKey,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "clearEntityLists,Local,java.lang.Class";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "get,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "isCachedList,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "getList,Local,java.lang.Class,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "containsKey,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "clear,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "putList,Local,java.lang.String,java.util.List";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "put,Local,java.lang.String,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "CacheEJB", "clearAll,Local,";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "CacheEJB", "**";
+};
+

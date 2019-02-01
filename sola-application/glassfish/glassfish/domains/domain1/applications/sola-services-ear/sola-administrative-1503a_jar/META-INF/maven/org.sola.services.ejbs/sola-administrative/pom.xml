@@ -1,0 +1,53 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>sola-ejbs</artifactId>
+        <groupId>org.sola.services</groupId>
+        <version>1503a</version>
+    </parent>
+
+    <groupId>org.sola.services.ejbs</groupId>
+    <artifactId>sola-administrative</artifactId>
+    <version>1503a</version>
+    <packaging>ejb</packaging>
+    
+    <name>EJB Administrative</name>
+    
+    <dependencies>
+ 
+        <dependency>
+            <groupId>org.sola.services</groupId>
+            <artifactId>sola-services-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-transaction</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-cadastre</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-source</artifactId>
+            <version>${project.version}</version>   
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-party</artifactId>
+            <version>${project.version}</version>   
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>sola-system</artifactId>
+            <version>${project.version}</version>   
+        </dependency>
+    </dependencies>
+</project>

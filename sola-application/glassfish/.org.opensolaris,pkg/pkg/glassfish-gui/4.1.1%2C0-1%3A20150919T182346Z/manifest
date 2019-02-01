@@ -1,0 +1,72 @@
+set name=fmri value=pkg://release.glassfish.org/glassfish-gui@4.1.1,0-1:20150919T182346Z
+set name=authority value=release.glassfish.org
+set name=info.classification value="Application Servers"
+set name=pkg.description value="Web based management console for administering GlassFish server. The administration console enables configuration and management of core features of the server, such as security realms and general server properties, and to obtain general information about the server. If this package is installed, one can plug in extensions to the administration console to administer other features, such as the web container or Java Database Connectivity (JDBC) software resources.  GlassFish Server is a modular and lightweight Java EE 7 compliant application server. Key features include an OSGi runtime, fast startup time, maven support, and rapid iterative development with Active Redeploy.  GlassFish Server also offers feature-rich administration with the web console, command line, and RESTful API."
+set name=pkg.summary value="GlassFish Administration Console"
+depend fmri=pkg:/glassfish-management type=require
+depend fmri=pkg:/glassfish-web type=require
+depend fmri=pkg:/glassfish-registration type=require
+depend fmri=pkg:/glassfish-jsf type=require
+license 8741fa556feea4ca58ec28abc47de0bf9d5b39a3 chash=28b7cfba8f297b99296afc231955dc90e8d76d47 license="CDDL and GPL v2 with classpath exception" pkg.csize=12394 pkg.size=38052
+dir group=sys mode=0755 owner=root path=glassfish
+dir group=sys mode=0755 owner=root path=glassfish/lib
+dir group=sys mode=0755 owner=root path=glassfish/modules
+dir group=sys mode=0755 owner=root path=glassfish/lib/install
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui
+file 7f9145da8d9dc331ae70168fe2b5650a1bafae8c chash=293e2a7a3761a3a67f5bdef142e0c32383844324 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/j_security_check pkg.csize=1011 pkg.size=2047
+file da194d19ddaafb9db99c3e7f770b32cdd164a367 chash=e2f8bd28c44e86a33172bca5958b219e6d7e17a8 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/index.jsf pkg.csize=1057 pkg.size=2135
+file ea8c3fa3a0dd3dc2057c8e13785fd88e1679eba3 chash=3fa7aae231ed1ae16880a4c049a3f87cb6adee96 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/3rd-party-license pkg.csize=28082 pkg.size=101380
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/META-INF
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/resources
+file db34867e2a5fa9f2843de31cac225885d2087505 chash=9cdc7bbd8aae1f9215bbef35dedbcef1f1a42e2e group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/context.xml pkg.csize=1088 pkg.size=2190
+file f81378afcf7e82f143f045baa904fdd53287016a chash=73430f150a5b21ff69e31e0e460f1add32f1c0e0 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/MANIFEST.MF pkg.csize=322 pkg.size=627
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/maven
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui/war
+file f38747a964ae49acc00219768900c87b9d41dfb3 chash=32a1e691fe15339cb10bdbfcebdf6cbab1b3e00e group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui/war/pom.properties pkg.csize=129 pkg.size=115
+file 6c2313c270065b26ee6e41d3af5e5bffd6b299cd chash=055720ae963e797f5b9e68436306f4d850313af0 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui/war/pom.xml pkg.csize=1958 pkg.size=6592
+file 156ccd3c06d8e2056075248cda4863d514982214 chash=25d16cf28cce455ca94f281d5f0111307e375c7e group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/web.xml pkg.csize=2424 pkg.size=8559
+file 2ada5b7613718552b060060615a5ca5dde65649e chash=fd0da356aca1ae6af1374999ae56f709b0d00110 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/faces-config.xml pkg.csize=1761 pkg.size=7391
+file 209890f30807dfbeb896f0a835edb1dab9856899 chash=9e1c5f20abf4c008ee1c1dc749b87a0dc514ca47 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/sun-web.xml pkg.csize=1468 pkg.size=3074
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/lib
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra
+file daa676cb60736bfdd0b6bb6713212b941b625baa chash=2d50f1616a1e02224ab90bf0a425240c0b91b490 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-4.1.1.jar pkg.csize=155272 pkg.size=174253
+file b02b002f0e9bb289b311db49c561c58afb8eb58c chash=2b8fb43139c1f7b7f55834fafca52a808b2fe373 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-1.5.0.jar pkg.csize=14196 pkg.size=14443
+file 977a6fa7f65f8ea68101aa1252c05e8193de97b5 chash=09474acf8cfedb685ce76b972a3301101f7f17c7 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-4.0.2.10.jar pkg.csize=1034366 pkg.size=4030544
+file d587a50727ba905aad13de9ea119081403bf6823 chash=dbe535861bed265d3141f084c5f036361cbeb974 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-fileupload-1.1.1.jar pkg.csize=27391 pkg.size=31909
+file 0e77d6bb7687a7084a1b92da563dfda6324ba83f chash=abba8444243b4bf5f1edfdb02e435908e3fc7443 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-ajax-nodemo-0.4.1.jar pkg.csize=1226138 pkg.size=1348553
+file b90b6ac57cf27a2858eaa490d02ba7945d18ca7b chash=ac57cd5e97c363c0bb86b64ef40309543755a94d group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-1.3.1.jar pkg.csize=75523 pkg.size=83613
+file 0fe8ce55b9f83f16185192821a385916b0eef38e chash=222f70939acc622237658b7866d943df9b9a4dfb group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/json-1.0.jar pkg.csize=36785 pkg.size=38560
+file 4ec663ae9ab37d9d6504dc5754e1e59d36d2cd9e chash=ba138addec9cec517724485a1b8cbebe2532ddc3 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-suntheme-4.0.2.10.jar pkg.csize=409260 pkg.size=488622
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui
+file 84bc0b95955f593eeabdfb2938614da1fcfb37a4 chash=a5eb0664411b0653dd69a3f26ad97a7b9749c13b group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/element-min.js pkg.csize=2576 pkg.size=8954
+file 7c478bef9caeeec331b4f49ab81df37426034624 chash=5446ea2b541bce798d2e3c10e1b875e506b58615 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/dragdrop-min.js pkg.csize=6918 pkg.size=23597
+file 3b5909b01a168dc3e047f9ddf97c717c9ea9e3ee chash=33f2552fc8b164d219524b67dc753a45912b92fb group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/yahoo-dom-event.js pkg.csize=12901 pkg.size=36628
+file 57a14867561eea8fcdc6ce3f96a786b00abd6765 chash=6ca5117ead01f3a7f63bd3b2912a1193ec82e421 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/connection-min.js pkg.csize=3801 pkg.size=11604
+file d6c90f38c1fb1eeef519b018013df83855fa588f chash=0e96f169e6d23eccaca36713818dd9034a259f31 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/resize-min.js pkg.csize=5070 pkg.size=21244
+file 8153d74c152f3a011cff4d4c84be707bbf372060 chash=9eba102b1358691f2f711564f5f981cdd9bf0e29 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/reset-fonts-grids.css pkg.csize=1509 pkg.size=5738
+file fd748e2c3c5508d79bd135ef617160cfb0a519d7 chash=17763feae8a2d93190dab0baf44e208e133c63db group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/layout-min.js pkg.csize=6654 pkg.size=28437
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets
+file d5e46ab29dfccd9d8285ce47716cc62b3c349f3a chash=ab3b537e5ee49b42f41a1ef1af34783b3ea9ed59 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/layout-core.css pkg.csize=600 pkg.size=2647
+file 44c3e943f084777f1e94d386d6741e3ef4aa1181 chash=39d0a5060f44e108a6b2c1853b58c2fd539d5407 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/resize-core.css pkg.csize=676 pkg.size=2911
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins
+dir group=sys mode=0755 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam
+file e9b2a662fbb1a1d88a4e110610bfbe13596ae016 chash=df51a5b2b3f27665fd12c473d60bedb7f64d9335 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/sprite.png pkg.csize=3459 pkg.size=3745
+file cd0b24d8dc85144ec748099b7243fde3ff0ba1e7 chash=050cde2def2d32cedbc5937a7ab600ffb48466bd group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/layout.css pkg.csize=1044 pkg.size=6025
+file 86d630c06e9cd142ac0e9a8e811f5a3b8ea26838 chash=b440d44733d21e87788d67925b9ff78fe8542b18 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/resize.css pkg.csize=1037 pkg.size=5473
+file 5cf1bf2c8ee253182523c7b980849973d391e2c3 chash=77bdba527095895dba8d222c81d94cc7bf30d808 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/layout_sprite.png pkg.csize=1432 pkg.size=1409
+file 67b75fc34aed0f48f22a74896d30f13837a57595 chash=9729de9557d874e0fccaef34d8965966823c565d group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/resize-skin.css pkg.csize=891 pkg.size=4338
+file 9eb971359de54f3063f39bcc0a35781407a68dd5 chash=8d9e1d271113d8791dc523beddfce8c1aa8112f7 group=sys mode=0644 owner=root path=glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/layout-skin.css pkg.csize=1141 pkg.size=6052
+file b4bfd41408706c9a986bd45a837237822e4bca6e chash=baf1ff052a96bc1da39c2c61558e2d6143bdd02c group=sys mode=0644 owner=root path=glassfish/modules/console-community-branding-plugin.jar pkg.csize=49667 pkg.size=54007
+file d2d94247349f4e44dfca2f77940471842fc99aeb chash=8e991a008f21f503e70ef1c87c2859c5f8e02793 group=sys mode=0644 owner=root path=glassfish/modules/gf-admingui-connector.jar pkg.csize=25274 pkg.size=29567
+file 60772ce01590c59737b351cceadd1e47d9d8bb6f chash=8aeb76f510d738b407e6d19b9ab20e3bf050a156 group=sys mode=0644 owner=root path=glassfish/modules/console-common.jar pkg.csize=1209573 pkg.size=1273416
+file 278356b52a988228ff2a329c296ec9474fc2ab02 chash=499a01a5075b2e2c727e8873cd7979966c60be83 group=sys mode=0644 owner=root path=glassfish/modules/console-web-plugin.jar pkg.csize=239619 pkg.size=257046
+file cedd2b41e85301d3c9ceb108f1d26b24f26b1b84 chash=8dfc67f857c5619774108d8e188e49cf1018d26e group=sys mode=0644 owner=root path=glassfish/modules/console-cluster-plugin.jar pkg.csize=250177 pkg.size=269773
+file c1e7ac46b39de4210559b342b9b3fd8c2c418a09 chash=1e8b045c877ea2db46fcaf679d2da714a3b752ec group=sys mode=0644 owner=root path=glassfish/modules/console-plugin-service.jar pkg.csize=8601 pkg.size=10183
+file e24444a67a896ea4e4b692c4b9d7aa29cf454eda chash=ad4dbbd91a905e35c41c9fb992dedeee7f7ca888 group=sys mode=0644 owner=root path=glassfish/modules/console-jca-plugin.jar pkg.csize=177834 pkg.size=191001
+file 0fae22453dd8c594501d15db4dd65b3018bc0656 chash=2d67e0c89b1f9adcd714c63b22165be9a9a5169a group=sys mode=0644 owner=root path=glassfish/modules/jsftemplating.jar pkg.csize=461908 pkg.size=529852
+file 48c255d205342e60abe2e6f138f1d7730671f0fb chash=145c2ce5e6e07519ee5b7441fc429b48eff960c8 group=sys mode=0644 owner=root path=glassfish/modules/console-updatecenter-plugin.jar pkg.csize=46545 pkg.size=50031
+file 0ad9716480a600683769d5a5eff7cfa9b4a5daaf chash=7e22dfcc8240e77f8de8b3fc1238cb7ef29a68e6 group=sys mode=0644 owner=root path=glassfish/modules/console-jdbc-plugin.jar pkg.csize=105711 pkg.size=112675
+file 16c76d2d54af31534c4c6bf6b0d27c43513478bb chash=0cd2ad936e1422cbf1d6cb038d55b57255f151d9 group=sys mode=0644 owner=root path=glassfish/modules/dataprovider.jar pkg.csize=92846 pkg.size=103637

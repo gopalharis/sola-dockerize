@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:uc="http://xmlns.jcp.org/jsf/composite/uc"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <cc:interface>
+        <cc:attribute name="claim" type="org.sola.opentenure.services.ejbs.claim.entities.Claim" />
+        <cc:attribute name="instantMapRender" type="java.lang.Boolean" default="true" 
+                      shortDescription="If true value is set, map will be rendered and shown immediately. 
+                      With false value, map will be rendered upon calling renderMap() method. 
+                      This is required to workaround issue with displaying map in Twitter bootstrap tabs. 
+                      In case of using map inside tabs, set this attribute to true and call renderMap() method on tab click event." />
+        <cc:attribute name="isMapEditable" type="java.lang.Boolean" default="false" 
+                      shortDescription="Indicates whether map can be edited or not." />
+        <cc:attribute name="mapHeight" type="java.lang.String" default="500" />
+    </cc:interface>
+
+    <cc:implementation id="mapClaims">
+
+        <uc:Map></uc:Map>
+
+        <c:if test="#{cc.attrs.isMapEditable}">
+            <script src="#{request.contextPath}/js/ot_map_claims.js"></script>
+        </c:if>
+        <script type="text/javascript">
+            var instantMapRender = #{cc.attrs.instantMapRender};
+            var mapControl;
+            var isMapEditable = #{cc.attrs.isMapEditable};
+            mapControlId = "#{cc.clientId}";
+            
+            Ext.onReady(function() {
+                var wkt = new OpenLayers.Format.WKT();
+                var communityArea = wkt.read("#{mapSettingsBean.communityArea}");
+                communityArea.geometry.transform(sourceCrs, destCrs);
+
+                var maxExtentBounds = communityArea.geometry.getBounds();
+                var initialZoomBounds = maxExtentBounds;
+                var layers = [];
+                var snappingLayers = [];
+
+                <ui:repeat var = "l" value = "#{mapSettingsBean.layersArray}" varStatus = "r">
+                    <ui:fragment rendered = "#{l.typeCode eq 'wms' and l.useForOpenTenure}">
+                        // Add WMS layers
+                        var wmsLayer = new OpenLayers.Layer.WMS("#{l.title}", "#{l.url}",
+                                    {layers: '#{l.wmsLayers}' #{mapSettingsBean.getLayerParamsString(l, true)}},
+                                    {#{mapSettingsBean.getLayerOptionsString(l, false)}});
+                        wmsLayer.legendOptions = "#{mapSettingsBean.getLegendOptions(l)}";
+                        layers.push(wmsLayer);
+                    </ui:fragment>
+                </ui:repeat>
+
+                // Add community area
+                var layerCommunityArea = new OT.Map.Layer.VectorLayer(
+                        OT.Map.LAYER_IDS.COMMUNITY_AREA,
+                        "#{msg.MAP_CONTROL_COMMUNITY_LAYER_NAME}",
+                        {
+                            isEditable: false,
+                            styleMap: OT.Map.Styles.styleMapCommunityLayer
+                        });
+                layerCommunityArea.addFeatures([communityArea]);
+                
+                layers.push(layerCommunityArea);
+                snappingLayers.push(layerCommunityArea);
+                
+                <c:if test="#{cc.attrs.isMapEditable or not empty cc.attrs.claim.locationsArray}">
+                    // Add aditional location layer
+                    var edtitLocationFunc = null;
+                    if(isMapEditable){
+                        edtitLocationFunc = showAdditionalLocationDialog;
+                    }
+                    var layerAdditionalLocations = new OT.Map.Layer.VectorLayer(
+                            OT.Map.LAYER_IDS.CLAIM_ADDITIONAL_LOCATIONS,
+                            "#{msg.MAP_CONTROL_LOCATIONS_LAYER_TITLE}",
+                            {styleMap: OT.Map.Styles.styleMapLocations,
+                                virtualNodeStyle: OT.Map.Styles.styleLocationsNode,
+                                isEditable: isMapEditable,
+                                allowPoint: true,
+                                allowLine: true,
+                                allowMultipleFeatures: true,
+                                editFeatureFunc: edtitLocationFunc
+                            });
+                    layers.push(layerAdditionalLocations);
+                    snappingLayers.push(layerAdditionalLocations);
+                    
+                    <c:if test = "#{not empty cc.attrs.claim.locationsArray}">
+                        var claimAdditionalLocations = [];
+                        var additionalLocation;
+                        <ui:repeat var = "l" value = "#{cc.attrs.claim.locationsArray}" varStatus = "r">
+                            additionalLocation = wkt.read("#{l.mappedLocation}");
+                            additionalLocation.geometry.transform(sourceCrs, destCrs);
+                            additionalLocation.attributes = {id: "#{l.id}", description: "#{l.description}"};
+                            claimAdditionalLocations[claimAdditionalLocations.length] = additionalLocation;
+                            layerAdditionalLocations.addFeatures(claimAdditionalLocations);
+                        </ui:repeat>
+                    </c:if>
+                </c:if>
+        
+                <c:if test = "#{cc.attrs.isMapEditable or not empty cc.attrs.claim.mappedGeometry}">
+                    // Add current claim layer
+                    var layerSelectedClaim = new OT.Map.Layer.VectorLayer(
+                            OT.Map.LAYER_IDS.CURRENT_CLAIM,
+                            "#{msg.MAP_CONTROL_CURRENT_CLAIM}", 
+                            {
+                                styleMap: OT.Map.Styles.styleMapClaim, 
+                                isEditable: isMapEditable, 
+                                virtualNodeStyle: OT.Map.Styles.styleClaimNode
+                            });
+                    
+                    layers.push(layerSelectedClaim);
+                    snappingLayers.push(layerSelectedClaim);
+                    
+                    <c:if test = "#{not empty cc.attrs.claim.mappedGeometry}">
+                        var currentClaimFeature = wkt.read("#{cc.attrs.claim.mappedGeometry}");
+                        currentClaimFeature.geometry.transform(sourceCrs, destCrs);
+
+                        initialZoomBounds = currentClaimFeature.geometry.getBounds();
+
+                        var statusCode = "#{cc.attrs.claim.statusCode}";
+                        <c:if test = "#{cc.attrs.claim.isReadyForReview}">
+                            statusCode = "forreview";
+                        </c:if>
+
+                        var currentClaimFeatureLabel = "";
+                        <c:if test = "#{not empty cc.attrs.claim.challengedClaimId or cc.attrs.claim.statusCode eq 'rejected' or cc.attrs.claim.statusCode eq 'withdrawn'}" >
+                            currentClaimFeatureLabel = "#{cc.attrs.claim.nr}";
+                        </c:if>
+
+                        currentClaimFeature.attributes = {label: currentClaimFeatureLabel, nr: "#{cc.attrs.claim.nr}", statusCode: statusCode, area: "#{cc.attrs.claim.claimArea}"};
+                        layerSelectedClaim.addFeatures(currentClaimFeature);
+                    </c:if>
+            
+                    layerSelectedClaim.events.on({"featuremodified": updateFeatureLabel});
+                    layerSelectedClaim.events.on({"vertexmodified": updateFeatureLabel});
+                    layerSelectedClaim.events.on({"beforefeatureadded": function(evt){
+                            evt.feature.attributes = {nr: "", label: "", area: "0"};
+                            updateFeatureLabel(evt);
+                    }});
+
+                    function updateFeatureLabel(evt){
+                            evt.feature.attributes.area = calculateArea(evt.feature);
+                            layerSelectedClaim.redraw();
+                    }
+                    
+                </c:if>
+
+                mapControl = new OT.Map({
+                    isMapEditable: isMapEditable,
+                    mapHeight: #{cc.attrs.mapHeight},
+                    maxExtentBounds: maxExtentBounds,
+                    initialZoomBounds: initialZoomBounds,
+                    applicationUrl: "#{mapSettingsBean.applicationUrl}",
+                    languageCode: "#{languageBean.locale}",
+                    layers: layers,
+                    snappingLayers: snappingLayers
+                });
+                
+                if (instantMapRender) {
+                    renderMap();
+                }
+            });
+
+            function renderMap() {
+                mapControl.renderMap();
+            }
+            
+            <c:if test="#{cc.attrs.isMapEditable}">
+                MSG.ERR.MAP_CONTROL_ADDITIONAL_LOCATION_DESCRIPTION_REQUIRED = "#{err.MAP_CONTROL_ADDITIONAL_LOCATION_DESCRIPTION_REQUIRED}";
+                MSG.ERR.MAP_CONTROL_BAD_FEATURE_STRUCTURE = "#{err.MAP_CONTROL_BAD_FEATURE_STRUCTURE}";
+                MSG.ERR.MAP_CONTROL_CLAIM_GEOMETRY_REQUIERD = "#{err.MAP_CONTROL_CLAIM_GEOMETRY_REQUIERD}";
+                MSG.ERR.MAP_CONTROL_CLAIM_GEOMETRY_MUST_BE_ONE = "#{err.MAP_CONTROL_CLAIM_GEOMETRY_MUST_BE_ONE}";
+                MSG.ERR.MAP_CONTROL_CLAIM_ADDITIONAL_LOCATION_DESCRIPTION_REQUIRED = "#{err.MAP_CONTROL_CLAIM_ADDITIONAL_LOCATION_DESCRIPTION_REQUIRED}";
+            </c:if>
+        </script>
+        
+        <c:if test="#{cc.attrs.isMapEditable}">
+            <div class="modal fade" id="additionalLocationDialog" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" style="width:400px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Additional location properties</span></button>
+                            <h4 class="modal-title" id="myModalLabel">#{msg.MAP_CONTROL_ADDITIONAL_LOCATION_PROPERTIES}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <label>#{msg.MAP_CONTROL_DESCRIPTION}</label>
+                            <textarea id="txtAdditionalLocationDescription" rows="3" style="width: 100%">
+                            </textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">#{msg.GENERAL_LABEL_CLOSE}</button>
+                            <button type="button" class="btn btn-default" onclick="saveAdditionalLocation()">#{msg.GENERAL_LABEL_SAVE}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h:inputHidden id="hCurrentClaim" binding="#{hCurrentClaim}" value="#{claimPageBean.claim.mappedGeometry}" />
+            <h:inputHidden id="hCurrentClaimArea" binding="#{hCurrentClaimArea}" value="#{claimPageBean.claim.claimArea}" />
+            <h:inputHidden id="hClaimAdditionalLocations" binding="#{hClaimAdditionalLocations}" value="#{claimPageBean.claimAdditionalLocationFeatures}" />
+        </c:if>
+    </cc:implementation>
+</html>

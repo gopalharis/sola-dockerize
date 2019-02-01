@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.PASSWORD_RESTORE_PAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <div class="PageName">
+                    #{msg.PASSWORD_RESTORE_PAGE_TITLE}
+                </div>
+                <div class="content" style="width: 300px;">
+                    <h:panelGroup rendered="#{passwordForgotPageBean.showRestorePassword}">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtEmail">
+                                    #{msg.REGISTRATIONPAGE_EMAIL} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <div id="divEmail">
+                                    <h:inputText id="txtEmail" 
+                                                 maxlength="50"
+                                                 value="#{passwordForgotPageBean.userBean.email}" 
+                                                 class="form-control" 
+                                                 autocomplete="off">
+                                        <f:ajax event="change" 
+                                                listener="#{passwordForgotPageBean.validateEmail}" 
+                                                render="msgEmailConfirmation" />
+                                    </h:inputText>
+                                    <h:outputText escape="false" id="msgEmailConfirmation" value="#{passwordForgotPageBean.emailValidation}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel for="txtCaptcha">
+                                    #{msg.REGISTRATIONPAGE_CAPTCHA} <i class="glyphicon glyphicon-required"></i>
+                                </h:outputLabel>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h:inputText id="txtCaptcha" 
+                                                     value="#{passwordForgotPageBean.captcha}" 
+                                                     class="form-control" 
+                                                     required="true" 
+                                                     autocomplete="off"
+                                                     transient="true"
+                                                     requiredMessage="#{err.USER_REGISTRATION_CAPTCHA_REQUIRED}" />
+                                    </div>
+                                    <div class="col-md-6" style="text-align: right;">
+                                        <img src="#{request.contextPath}/captcha.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="LineSpace"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:commandButton value="#{msg.PASSWORD_RESTORE_PAGE_RESTORE}" 
+                                                 action="#{passwordForgotPageBean.sendRestoreLink()}" 
+                                                 class="btn btn-default" />
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{passwordForgotPageBean.showSendConfirmation}">
+                        #{msg.PASSWORD_RESTORE_PAGE_SEND_CONFIRMATION}
+                    </h:panelGroup>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

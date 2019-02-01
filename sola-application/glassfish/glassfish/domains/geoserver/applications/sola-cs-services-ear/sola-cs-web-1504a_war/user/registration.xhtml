@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.REGISTRATIONPAGE_TITLE}
+            </ui:define>
+            <ui:define name="content">
+                <div class="PageName"><i class="glyphicon glyphicon-user"></i> #{msg.REGISTRATIONPAGE_TITLE}</div>
+                <div class="content" style="width: 600px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtUserName">
+                                #{msg.LOGINPAGE_USERNAME} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divUserName">
+                                <h:inputText id="txtUserName" 
+                                             value="#{registrationPageBean.userBean.userName}" 
+                                             class="form-control"
+                                             maxlength="20"
+                                             autocomplete="off">
+                                    <f:ajax event="change" listener="#{registrationPageBean.validateUserName}" render="msgUserName" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgUserName" value="#{registrationPageBean.userNameValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtPassword">
+                                #{msg.LOGINPAGE_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divPassword">
+                                <h:inputSecret id="txtPassword" 
+                                               maxlength="20"
+                                               value="#{registrationPageBean.userBean.password}" 
+                                               class="form-control">
+                                    <f:ajax event="change" execute="txtPassword txtPasswordConfirmation" 
+                                            listener="#{registrationPageBean.validatePassword}" 
+                                            render="msgPassword msgPasswordConfirmation" />
+                                </h:inputSecret>
+                                <h:outputText escape="false" id="msgPassword" value="#{registrationPageBean.passwordValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtPasswordConfirmation">
+                                #{msg.REGISTRATIONPAGE_CONFIRM_PASSWORD} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divPasswordConfirmation">
+                                <h:inputSecret id="txtPasswordConfirmation" 
+                                               maxlength="20"
+                                               value="#{registrationPageBean.userBean.passwordRepeat}" 
+                                               class="form-control">
+                                    <f:ajax event="change" execute="txtPassword txtPasswordConfirmation" 
+                                            listener="#{registrationPageBean.validatePasswordConfirmation}" 
+                                            render="msgPasswordConfirmation" />
+                                </h:inputSecret>
+                                <h:outputText escape="false" id="msgPasswordConfirmation" value="#{registrationPageBean.passwordConfirmationValidation}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtFirstName">
+                                #{msg.REGISTRATIONPAGE_FIRST_NAME} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divFirstName">
+                                <h:inputText id="txtFirstName" 
+                                             value="#{registrationPageBean.userBean.firstName}" 
+                                             maxlength="50"
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{registrationPageBean.validateFirstName}" 
+                                            render="msgFirstNameConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgFirstNameConfirmation" value="#{registrationPageBean.firstNameValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtLastName">
+                                #{msg.REGISTRATIONPAGE_LAST_NAME} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divLastName">
+                                <h:inputText id="txtLastName" 
+                                             maxlength="50"
+                                             value="#{registrationPageBean.userBean.lastName}" 
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{registrationPageBean.validateLastName}" 
+                                            render="msgLastNameConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgLastNameConfirmation" value="#{registrationPageBean.lastNameValidation}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtEmail">
+                                #{msg.REGISTRATIONPAGE_EMAIL} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divEmail">
+                                <h:inputText id="txtEmail" 
+                                             maxlength="50"
+                                             value="#{registrationPageBean.userBean.email}" 
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{registrationPageBean.validateEmail}" 
+                                            render="msgEmailConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgEmailConfirmation" value="#{registrationPageBean.emailValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtMobileNumber">
+                                #{msg.REGISTRATIONPAGE_MOBILE} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div id="divMobileNumber">
+                                <h:inputText id="txtMobileNumber" 
+                                             maxlength="20"
+                                             value="#{registrationPageBean.userBean.mobileNumber}" 
+                                             class="form-control" 
+                                             autocomplete="off">
+                                    <f:ajax event="change" 
+                                            listener="#{registrationPageBean.validateMobile}" 
+                                            render="msgMobileConfirmation" />
+                                </h:inputText>
+                                <h:outputText escape="false" id="msgMobileConfirmation" value="#{registrationPageBean.mobileValidation}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtCommunityName">
+                                #{msg.REGISTRATIONPAGE_COMMUNITY_NAME}
+                            </h:outputLabel>
+                            <br />
+                            <h:inputText id="txtCommunityName" 
+                                         autocomplete="off"
+                                         value="#{registrationPageBean.userBean.description}" 
+                                         class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:outputLabel for="txtCaptcha">
+                                #{msg.REGISTRATIONPAGE_CAPTCHA} <i class="glyphicon glyphicon-required"></i>
+                            </h:outputLabel>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="divCaptcha">
+                                        <h:inputText id="txtCaptcha" 
+                                                     maxlength="6"
+                                                     value="#{registrationPageBean.captchaValue}" 
+                                                     class="form-control" 
+                                                     autocomplete="off"
+                                                     transient="true">
+                                            <f:ajax event="change" 
+                                                    listener="#{registrationPageBean.validateCaptcha}" 
+                                                    render="msgCaptchaConfirmation" />
+                                        </h:inputText>
+                                        <h:outputText escape="false" id="msgCaptchaConfirmation" value="#{registrationPageBean.captchaValidation}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="text-align: right;">
+                                    <img src="#{request.contextPath}/captcha.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <div class="LineSpace"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:commandButton value="#{msg.REGISTRATIONPAGE_REGISTER}" 
+                                             action="#{registrationPageBean.register()}" 
+                                             class="btn btn-default">
+                                <f:ajax execute="@form" render="@form :headerForm" />
+                            </h:commandButton>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

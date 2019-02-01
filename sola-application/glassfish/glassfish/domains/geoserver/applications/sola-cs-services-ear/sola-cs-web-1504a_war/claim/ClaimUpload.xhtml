@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <ui:composition template="../templates/BasicTemplate.xhtml">
+            <ui:define name="title">
+                #{msg.CLAIM_UPLOAD_PAGE_TITLE}
+            </ui:define>
+
+            <ui:define name="content2">
+                <div class="PageName">
+                    <i class="glyphicon glyphicon-upload"></i> #{msg.CLAIM_UPLOAD_PAGE_TITLE}
+                </div>
+
+                <h:form id="attachForm" enctype="multipart/form-data" acceptcharset="UTF-8">
+                    <div class="content" style="width: 450px;">
+                        <div class="form-group">
+                            <label>
+                                #{msg.CLAIM_UPLOAD_PAGE_CLAIM_FILE} <i class="glyphicon glyphicon-required"></i>
+                            </label>
+                            <br />
+                            <h:inputFile id="fClaimFile" value="#{claimUploadPageBean.fileClaim}" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                #{msg.CLAIM_UPLOAD_PAGE_FILE_PASSWORD}
+                            </label>
+                            <br />
+                            <h:inputSecret id="txtFilePassword" 
+                                           value="#{claimUploadPageBean.filePassword}" 
+                                           class="form-control" />
+                        </div>
+                        <div style="text-align: right;">
+                            <h:commandButton value="#{msg.GENERAL_LABEL_UPLOAD}" 
+                                             action="#{claimUploadPageBean.uploadClaim()}" 
+                                             onclick="blockUI()"
+                                             class="btn btn-default" />
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

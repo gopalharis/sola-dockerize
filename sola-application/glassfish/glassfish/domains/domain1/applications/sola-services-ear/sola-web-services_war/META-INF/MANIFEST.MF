@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: armcd
+Class-Path: sola-application-1503a.jar sola-party-1503a.jar sola-sourc
+ e-1503a.jar sola-system-1503a.jar sola-transfer-objects-1503a.jar sol
+ a-cadastre-1503a.jar sola-address-1503a.jar sola-transaction-1503a.ja
+ r sola-search-1503a.jar mybatis-3.0.6.jar sola-administrative-1503a.j
+ ar sola-digital-archive-1503a.jar sola-services-common-1503a.jar sola
+ -common-1503a.jar pdf-renderer-1.0.5.jar sanselan-0.97-incubator.jar 
+ slf4j-api-1.6.1.jar slf4j-nop-1.6.1.jar jcifs-1.3.17.jar servlet-api-
+ 2.4.jar commons-io-2.4.jar sola-messaging-1503a.jar sola-cache-1503a.
+ jar jackson-core-asl-1.9.10.jar dozer-5.3.2.jar commons-beanutils-1.8
+ .3.jar commons-logging-1.1.1.jar commons-lang-2.5.jar jts-1.13.jar so
+ la-admin-1503a.jar javaee-web-api-6.0.jar
+Created-By: Apache Maven
+Build-Jdk: 1.8.0_181
+

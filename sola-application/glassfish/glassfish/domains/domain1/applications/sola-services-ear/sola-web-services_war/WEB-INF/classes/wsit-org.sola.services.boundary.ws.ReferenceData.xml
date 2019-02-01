@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="referencedata-service" targetNamespace="http%3A%2F%2Fwebservices.sola.org%2Freferencedata" xmlns:tns="http%3A%2F%2Fwebservices.sola.org%2Freferencedata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1="http://www.w3.org/ns/ws-policy" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsaw="http://www.w3.org/2005/08/addressing" xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" 
+ >
+    <message name="CheckConnection"/>
+    <message name="CheckConnectionResponse"/>
+    <message name="GetCommunicationTypes"/>
+    <message name="GetCommunicationTypesResponse"/>
+    <message name="SOLAFault"/>
+    <message name="UnhandledFault"/>
+    <message name="SOLAAccessFault"/>
+    <message name="GetGenderTypes"/>
+    <message name="GetGenderTypesResponse"/>
+    <message name="GetAvailabilityStatusList"/>
+    <message name="GetAvailabilityStatusListResponse"/>
+    <message name="GetPresentationFormTypes"/>
+    <message name="GetPresentationFormTypesResponse"/>
+    <message name="GetRequestTypes"/>
+    <message name="GetRequestTypesResponse"/>
+    <message name="GetRequestCategoryTypes"/>
+    <message name="GetRequestCategoryTypesResponse"/>
+    <message name="GetSourceTypes"/>
+    <message name="GetSourceTypesResponse"/>
+    <message name="GetApplicationStatusTypes"/>
+    <message name="GetApplicationStatusTypesResponse"/>
+    <message name="GetApplicationActionTypes"/>
+    <message name="GetApplicationActionTypesResponse"/>
+    <message name="GetServiceStatusTypes"/>
+    <message name="GetServiceStatusTypesResponse"/>
+    <message name="GetServiceActionTypes"/>
+    <message name="GetServiceActionTypesResponse"/>
+    <message name="GetPartyTypes"/>
+    <message name="GetPartyTypesResponse"/>
+    <message name="GetPartyRoles"/>
+    <message name="GetPartyRolesResponse"/>
+    <message name="GetIdTypes"/>
+    <message name="GetIdTypesResponse"/>
+    <message name="GetBaUnitTypes"/>
+    <message name="GetBaUnitTypesResponse"/>
+    <message name="GetChangeStatuTypes"/>
+    <message name="GetChangeStatuTypesResponse"/>
+    <message name="GetMortgageTypes"/>
+    <message name="GetMortgageTypesResponse"/>
+    <message name="getConditionTypes"/>
+    <message name="getConditionTypesResponse"/>
+    <message name="GetRRRGroupTypes"/>
+    <message name="GetRRRGroupTypesResponse"/>
+    <message name="GetRRRTypes"/>
+    <message name="GetRRRTypesResponse"/>
+    <message name="GetSourceBaUnitRelationTypes"/>
+    <message name="GetSourceBaUnitRelationTypesResponse"/>
+    <message name="GetRegistrationStatusTypes"/>
+    <message name="GetRegistrationStatusTypesResponse"/>
+    <message name="GetLandUseTypes"/>
+    <message name="GetLandUseTypesResponse"/>
+    <message name="GetCadastreObjectTypes"/>
+    <message name="GetCadastreObjectTypesResponse"/>
+    <message name="GetTypeActions"/>
+    <message name="GetTypeActionsResponse"/>
+    <message name="GetBrTechnicalTypes"/>
+    <message name="GetBrTechnicalTypesResponse"/>
+    <message name="GetBrValidationTargetTypes"/>
+    <message name="GetBrValidationTargetTypesResponse"/>
+    <message name="GetBrSeverityTypes"/>
+    <message name="GetBrSeverityTypesResponse"/>
+    <message name="GetBaUnitRelTypes"/>
+    <message name="GetBaUnitRelTypesResponse"/>
+    <message name="GetHierarchyLevels"/>
+    <message name="GetHierarchyLevelsResponse"/>
+    <message name="saveReferenceData"/>
+    <message name="saveReferenceDataResponse"/>
+    <message name="OptimisticLockingFault"/>
+    <portType name="ReferenceData">
+        <operation name="CheckConnection">
+            <input message="tns:CheckConnection"/>
+            <output message="tns:CheckConnectionResponse"/>
+        </operation>
+        <operation name="GetCommunicationTypes">
+            <input message="tns:GetCommunicationTypes"/>
+            <output message="tns:GetCommunicationTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetGenderTypes">
+            <input message="tns:GetGenderTypes"/>
+            <output message="tns:GetGenderTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetAvailabilityStatusList">
+            <input message="tns:GetAvailabilityStatusList"/>
+            <output message="tns:GetAvailabilityStatusListResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetPresentationFormTypes">
+            <input message="tns:GetPresentationFormTypes"/>
+            <output message="tns:GetPresentationFormTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRequestTypes">
+            <input message="tns:GetRequestTypes"/>
+            <output message="tns:GetRequestTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRequestCategoryTypes">
+            <input message="tns:GetRequestCategoryTypes"/>
+            <output message="tns:GetRequestCategoryTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourceTypes">
+            <input message="tns:GetSourceTypes"/>
+            <output message="tns:GetSourceTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetApplicationStatusTypes">
+            <input message="tns:GetApplicationStatusTypes"/>
+            <output message="tns:GetApplicationStatusTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetApplicationActionTypes">
+            <input message="tns:GetApplicationActionTypes"/>
+            <output message="tns:GetApplicationActionTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetServiceStatusTypes">
+            <input message="tns:GetServiceStatusTypes"/>
+            <output message="tns:GetServiceStatusTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetServiceActionTypes">
+            <input message="tns:GetServiceActionTypes"/>
+            <output message="tns:GetServiceActionTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetPartyTypes">
+            <input message="tns:GetPartyTypes"/>
+            <output message="tns:GetPartyTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetPartyRoles">
+            <input message="tns:GetPartyRoles"/>
+            <output message="tns:GetPartyRolesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetIdTypes">
+            <input message="tns:GetIdTypes"/>
+            <output message="tns:GetIdTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBaUnitTypes">
+            <input message="tns:GetBaUnitTypes"/>
+            <output message="tns:GetBaUnitTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetChangeStatuTypes">
+            <input message="tns:GetChangeStatuTypes"/>
+            <output message="tns:GetChangeStatuTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetMortgageTypes">
+            <input message="tns:GetMortgageTypes"/>
+            <output message="tns:GetMortgageTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="getConditionTypes">
+            <input message="tns:getConditionTypes"/>
+            <output message="tns:getConditionTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRRRGroupTypes">
+            <input message="tns:GetRRRGroupTypes"/>
+            <output message="tns:GetRRRGroupTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRRRTypes">
+            <input message="tns:GetRRRTypes"/>
+            <output message="tns:GetRRRTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourceBaUnitRelationTypes">
+            <input message="tns:GetSourceBaUnitRelationTypes"/>
+            <output message="tns:GetSourceBaUnitRelationTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRegistrationStatusTypes">
+            <input message="tns:GetRegistrationStatusTypes"/>
+            <output message="tns:GetRegistrationStatusTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetLandUseTypes">
+            <input message="tns:GetLandUseTypes"/>
+            <output message="tns:GetLandUseTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetCadastreObjectTypes">
+            <input message="tns:GetCadastreObjectTypes"/>
+            <output message="tns:GetCadastreObjectTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetTypeActions">
+            <input message="tns:GetTypeActions"/>
+            <output message="tns:GetTypeActionsResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBrTechnicalTypes">
+            <input message="tns:GetBrTechnicalTypes"/>
+            <output message="tns:GetBrTechnicalTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBrValidationTargetTypes">
+            <input message="tns:GetBrValidationTargetTypes"/>
+            <output message="tns:GetBrValidationTargetTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBrSeverityTypes">
+            <input message="tns:GetBrSeverityTypes"/>
+            <output message="tns:GetBrSeverityTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBaUnitRelTypes">
+            <input message="tns:GetBaUnitRelTypes"/>
+            <output message="tns:GetBaUnitRelTypesResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="GetHierarchyLevels">
+            <input message="tns:GetHierarchyLevels"/>
+            <output message="tns:GetHierarchyLevelsResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+        </operation>
+        <operation name="saveReferenceData">
+            <input message="tns:saveReferenceData"/>
+            <output message="tns:saveReferenceDataResponse"/>
+            <fault name="SOLAFault" message="tns:SOLAFault"/>
+            <fault name="UnhandledFault" message="tns:UnhandledFault"/>
+            <fault name="SOLAAccessFault" message="tns:SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault" message="tns:OptimisticLockingFault"/>
+        </operation>
+    </portType>
+    <binding name="ReferenceDataPortBinding" type="tns:ReferenceData">
+        <wsp:PolicyReference URI="#ReferenceDataPortBindingPolicy"/>
+        <operation name="CheckConnection">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="GetCommunicationTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetGenderTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetAvailabilityStatusList">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetPresentationFormTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRequestTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRequestCategoryTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourceTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetApplicationStatusTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetApplicationActionTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetServiceStatusTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetServiceActionTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetPartyTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetPartyRoles">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetIdTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBaUnitTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetChangeStatuTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetMortgageTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="getConditionTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRRRGroupTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRRRTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetSourceBaUnitRelationTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetRegistrationStatusTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetLandUseTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetCadastreObjectTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetTypeActions">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBrTechnicalTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBrValidationTargetTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBrSeverityTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetBaUnitRelTypes">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="GetHierarchyLevels">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+        </operation>
+        <operation name="saveReferenceData">
+            <input>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#ReferenceDataPortBinding_CheckConnection_Output_Policy"/>
+            </output>
+            <fault name="SOLAFault"/>
+            <fault name="UnhandledFault"/>
+            <fault name="SOLAAccessFault"/>
+            <fault name="OptimisticLockingFault"/>
+        </operation>
+    </binding>
+    <service name="referencedata-service">
+        <port name="ReferenceDataPort" binding="tns:ReferenceDataPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="ReferenceDataPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="false"/>
+                <sp:SymmetricBinding>
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                                    <wsp:Policy>
+                                        <sp:WssX509V3Token10/>
+                                        <sp:RequireIssuerSerialReference/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:Wss11>
+                    <wsp:Policy>
+                        <sp:MustSupportRefIssuerSerial/>
+                        <sp:MustSupportRefThumbprint/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+                <sp:SignedSupportingTokens>
+                    <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:WssUsernameToken10/>
+                            </wsp:Policy>
+                        </sp:UsernameToken>
+                    </wsp:Policy>
+                </sp:SignedSupportingTokens>
+               <sc:KeyStore wspp:visibility="private" location="keystore.jks" type="JKS" storepass="changeit" alias="xws-security-server"/>
+             </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReferenceDataPortBinding_CheckConnection_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ReferenceDataPortBinding_CheckConnection_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

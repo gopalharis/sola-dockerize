@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <body>
+        <ui:composition>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="nav navbar-nav">
+                        <li class='#{mainMenuBean.getItemClassByPath("/index.xhtml")}'>
+                            <a href="#{request.contextPath}/index.xhtml">#{msg.MAIN_MENU_HOME}</a>
+                        </li>
+                        <c:if test="#{activeUserBean.authenticated and (activeUserBean.canRecordClaim or activeUserBean.canModerateClaim or activeUserBean.canReviewClaim)}">
+                            <li class='#{mainMenuBean.getItemClassByPath("/Dashboard.xhtml")}'>
+                                <a href="#{request.contextPath}/Dashboard.xhtml">
+                                    #{msg.DASHBOARD_PAGE_TITLE}
+                                </a>
+                            </li>
+                        </c:if>
+                        <li class='#{mainMenuBean.getItemClassByPath("/user/")}'>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                #{msg.MAIN_MENU_REGISTRATION} <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#{request.contextPath}/user/registration.xhtml">
+                                        <i class="glyphicon glyphicon-user"></i> #{msg.MAIN_MENU_NEW_REGISTRATION}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <c:if test="#{activeUserBean.authenticated}">
+                            <li class='#{mainMenuBean.getItemClassByPath("/claim/")}'>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    #{msg.MAIN_MENU_CLAIMS} <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#{request.contextPath}/claim/search.xhtml">
+                                            <i class="glyphicon glyphicon-search"></i> #{msg.MAIN_MENU_SEARCH}
+                                        </a>
+                                    </li>
+                                    <c:if test="#{activeUserBean.canRecordClaim}">
+                                        <li><a href="#{request.contextPath}/claim/Claim.xhtml"><i class="glyphicon glyphicon-file"></i> #{msg.MAIN_MENU_NEW}</a></li>
+                                        <li><a href="#{request.contextPath}/claim/ClaimUpload.xhtml"><i class="glyphicon glyphicon-upload"></i> #{msg.MAIN_MENU_UPLOAD}</a></li>                               
+                                    </c:if>
+                                </ul>
+                            </li>
+                        </c:if>
+                        <c:if test="#{activeUserBean.authenticated}">
+                            <li class='#{mainMenuBean.getItemClassByPath("/map/")}'>
+                                <a href="#{request.contextPath}/map/map.xhtml">#{msg.MAIN_MENU_MAP}</a>
+                            </li>
+                        </c:if>
+                        <c:if test="#{activeUserBean.canViewReports}">
+                            <li class='#{mainMenuBean.getItemClassByPath("/report/")}'>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    #{msg.MAIN_MENU_REPORTS} <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <ui:repeat value="#{mainMenuBean.reports}" var="r">
+                                        <li>
+                                            <a href="#{request.contextPath}/report/ViewReport.xhtml?report=#{r.uri}">
+                                                <i class="glyphicon glyphicon-list-alt"></i> #{r.label}
+                                            </a>
+                                        </li>
+                                    </ui:repeat>
+                                </ul>
+                            </li>
+                        </c:if>
+                    </ul>
+                </div>
+            </nav>
+        </ui:composition>
+    </body>
+</html>
